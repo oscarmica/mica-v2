@@ -7,7 +7,7 @@ import {
   FileCheck, 
   UserCheck, 
   Building, 
-  Percentage 
+  Percent 
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -38,7 +38,7 @@ const featuresList = [
     description: 'Professional evaluation of property condition at move-in and move-out to prevent disputes.'
   },
   {
-    icon: <Percentage className="h-10 w-10 text-primary" />,
+    icon: <Percent className="h-10 w-10 text-primary" />,
     title: 'Affordable Plans',
     description: 'Protection plans starting at just a small percentage of your monthly rent for complete peace of mind.'
   }

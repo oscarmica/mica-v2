@@ -7,13 +7,9 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      <div className="container px-4 mx-auto relative">
+    <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-white">
+      <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
-          {/* Background gradient effects */}
-          <div className="absolute top-20 -left-64 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse-subtle"></div>
-          <div className="absolute bottom-0 -right-64 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse-subtle delay-700"></div>
-          
           <div className="text-center relative z-10">
             {/* Subtitle */}
             <motion.div
@@ -34,9 +30,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-bold mb-4 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Rent with <span className="text-primary">Confidence</span>
-              <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Peace of mind for tenants</span>
+              Smart <span className="text-primary">Protection</span> for Smart Renters
             </motion.h1>
             
             {/* Description */}
@@ -44,9 +38,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance"
+              className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance"
             >
-              Protect yourself from unexpected rental issues with our comprehensive tenant protection service. We've got you covered from deposit disputes to maintenance problems.
+              Secure your rental journey with our comprehensive protection. From deposits to disputes, 
+              we've got you covered every step of the way.
             </motion.p>
             
             {/* CTA Buttons */}
@@ -56,11 +51,11 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button className="btn-primary group">
-                Get Protected Now
+              <Button className="bg-primary text-white rounded-full px-8 py-6 text-base h-auto group">
+                Start Your Protection
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button className="btn-outline">
+              <Button className="border-2 border-slate-200 bg-white text-slate-800 hover:bg-slate-50 rounded-full px-8 py-6 text-base h-auto">
                 Learn More
               </Button>
             </motion.div>
@@ -70,7 +65,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12 flex items-center justify-center space-x-2 text-sm text-muted-foreground"
+              className="mt-12 flex items-center justify-center space-x-2 text-sm text-slate-500"
             >
               <ShieldCheck className="h-5 w-5 text-primary" />
               <span>Trusted by 10,000+ renters nationwide</span>
@@ -84,17 +79,14 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="mt-16 relative"
           >
-            <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl shadow-2xl shadow-primary/10">
-              <div className={cn(
-                "absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10",
-                "rounded-3xl opacity-20"
-              )} />
+            <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
                 alt="Happy tenants in their protected apartment" 
-                className="w-full h-auto object-cover rounded-3xl"
+                className="w-full h-auto object-cover"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl"></div>
             </div>
           </motion.div>
         </div>

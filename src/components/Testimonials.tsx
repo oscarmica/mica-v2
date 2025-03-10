@@ -30,7 +30,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-secondary/30">
+    <section id="testimonials" className="py-20 bg-white">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -45,7 +45,7 @@ const Testimonials = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               What Our <span className="text-primary">Protected</span> Tenants Say
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-slate-600 text-lg">
               Don't just take our word for it. Hear from tenants who have experienced the benefits of our protection services.
             </p>
           </motion.div>
@@ -60,19 +60,17 @@ const Testimonials = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={cn(
-                "glass p-8 rounded-2xl relative",
-                "hover-card-animation"
+                "bg-white p-8 rounded-xl border border-slate-100 shadow-sm",
+                "hover:shadow-md transition-all duration-300"
               )}
             >
-              <Quote className="absolute top-6 right-6 h-10 w-10 text-primary/10" />
-              
               <div className="flex space-x-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                 ))}
               </div>
               
-              <p className="text-foreground mb-6 relative z-10">"{testimonial.quote}"</p>
+              <p className="text-slate-600 mb-6 relative z-10">"{testimonial.quote}"</p>
               
               <div className="flex items-center">
                 <img 
@@ -83,7 +81,7 @@ const Testimonials = () => {
                 />
                 <div>
                   <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                  <p className="text-sm text-slate-500">{testimonial.title}</p>
                 </div>
               </div>
             </motion.div>

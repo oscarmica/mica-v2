@@ -13,32 +13,32 @@ import { motion } from 'framer-motion';
 
 const featuresList = [
   {
-    icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
     title: 'Deposit Protection',
     description: 'Secure your deposit with our comprehensive protection plan that ensures you get your money back.'
   },
   {
-    icon: <Clock className="h-10 w-10 text-primary" />,
+    icon: <Clock className="h-8 w-8 text-primary" />,
     title: 'Quick Response',
     description: 'Get help within 24 hours for any rental issue that arises during your tenancy period.'
   },
   {
-    icon: <FileCheck className="h-10 w-10 text-primary" />,
+    icon: <FileCheck className="h-8 w-8 text-primary" />,
     title: 'Legal Support',
     description: 'Access to professional legal advice for any disputes or issues with your landlord or property.'
   },
   {
-    icon: <UserCheck className="h-10 w-10 text-primary" />,
+    icon: <UserCheck className="h-8 w-8 text-primary" />,
     title: 'Tenant Advocacy',
     description: 'We represent your interests and ensure your rights as a tenant are protected at all times.'
   },
   {
-    icon: <Building className="h-10 w-10 text-primary" />,
+    icon: <Building className="h-8 w-8 text-primary" />,
     title: 'Property Inspection',
     description: 'Professional evaluation of property condition at move-in and move-out to prevent disputes.'
   },
   {
-    icon: <Percent className="h-10 w-10 text-primary" />,
+    icon: <Percent className="h-8 w-8 text-primary" />,
     title: 'Affordable Plans',
     description: 'Protection plans starting at just a small percentage of your monthly rent for complete peace of mind.'
   }
@@ -66,7 +66,7 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="py-20 bg-secondary/50">
+    <section id="features" className="py-20 bg-slate-50">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -92,13 +92,15 @@ const Features = () => {
               key={index}
               variants={itemVariants}
               className={cn(
-                "relative p-8 rounded-2xl glass hover-card-animation",
-                "border border-primary/5"
+                "relative p-8 rounded-xl bg-white shadow-sm",
+                "border border-slate-100 hover:shadow-md transition-all duration-300"
               )}
             >
-              <div className="mb-5">{feature.icon}</div>
+              <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
+                {feature.icon}
+              </div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <p className="text-slate-600">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

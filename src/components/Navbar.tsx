@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "py-3 glass" : "py-5 bg-transparent"
+      isScrolled ? "py-3 bg-white/95 shadow-sm backdrop-blur-sm" : "py-5 bg-transparent"
     )}>
       <div className="container px-4 mx-auto flex justify-between items-center">
         <a href="#" className="flex items-center space-x-2">
@@ -56,18 +56,18 @@ const Navbar = () => {
             <a 
               key={index} 
               href={link.href} 
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <Button className="btn-primary">Get Protected</Button>
+          <Button className="bg-primary text-white rounded-full px-6 h-10 hover:bg-primary/90">Get Protected</Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden text-foreground focus:outline-none"
+          className="md:hidden text-slate-800 focus:outline-none"
           aria-label={isOpen ? "Close Menu" : "Open Menu"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,20 +82,23 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
-            className="md:hidden glass overflow-hidden"
+            className="md:hidden bg-white border-t overflow-hidden"
           >
             <div className="container px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link, index) => (
                 <a 
                   key={index} 
                   href={link.href} 
-                  className="py-2 text-foreground/80 hover:text-primary transition-colors"
+                  className="py-2 text-slate-600 hover:text-primary transition-colors"
                   onClick={closeMenu}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button className="btn-primary w-full" onClick={closeMenu}>
+              <Button 
+                className="bg-primary text-white rounded-full w-full hover:bg-primary/90" 
+                onClick={closeMenu}
+              >
                 Get Protected
               </Button>
             </div>

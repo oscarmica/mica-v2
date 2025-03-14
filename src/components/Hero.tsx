@@ -18,7 +18,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-bold mb-4 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Tu seguro de <span className="text-mica-green">depósito</span> en México
+              Tu renta <span className="text-mica-green">simple</span> y <span className="text-mica-green">segura</span>.
             </motion.h1>
             
             {/* Description */}
@@ -28,7 +28,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-mica-gray-2 text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance"
             >
-              Olvídate del depósito en garantía. Paga un seguro mensual económico y recupera el 100% de tu dinero.
+              Tecnología, expertise legal y soluciones financieras para tus operaciones de renta.
             </motion.p>
             
             {/* CTA Buttons */}
@@ -39,7 +39,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
-                Comienza ya
+                Inicia sesión
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">
@@ -54,7 +54,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-12 flex items-center justify-center space-x-2 text-sm text-mica-gray-3"
             >
-              <span>Más de 10,000 inquilinos protegidos en todo México</span>
+              <span>La mejor protección para el arrendamiento en México</span>
             </motion.div>
           </div>
           

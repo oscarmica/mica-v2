@@ -6,43 +6,118 @@ import {
   Clock, 
   FileCheck, 
   UserCheck, 
-  Building, 
+  BadgeCheck,
   Percent 
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const featuresList = [
-  {
-    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: 'Protección de Depósito',
-    description: 'Asegura la devolución de tu depósito al finalizar tu contrato, sin complicaciones.'
-  },
-  {
-    icon: <Clock className="h-8 w-8 text-primary" />,
-    title: 'Proceso Rápido',
-    description: 'Obtén tu protección en menos de 5 minutos, 100% en línea y sin papeleo.'
-  },
-  {
-    icon: <FileCheck className="h-8 w-8 text-primary" />,
-    title: 'Soporte Legal',
-    description: 'Acceso a asesoría legal profesional para cualquier disputa con tu arrendador.'
-  },
-  {
-    icon: <UserCheck className="h-8 w-8 text-primary" />,
-    title: 'Sin Aval Requerido',
-    description: 'Renta sin necesidad de un aval o fiador. Nosotros respaldamos tu contrato.'
-  },
-  {
-    icon: <Building className="h-8 w-8 text-primary" />,
-    title: 'Compatible con Cualquier Propiedad',
-    description: 'Nuestro servicio funciona con todo tipo de propiedades residenciales en México.'
-  },
-  {
-    icon: <Percent className="h-8 w-8 text-primary" />,
-    title: 'Planes Accesibles',
-    description: 'Paga solo un pequeño porcentaje de tu renta mensual por una protección completa.'
-  }
-];
+// Componente para los diferentes beneficios según el tipo de usuario
+const UserBenefits = ({ type }: { type: 'propietarios' | 'inquilinos' | 'asesores' }) => {
+  const benefitsData = {
+    propietarios: [
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Investigación detallada de inquilinos'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Prevención de extinción de dominio'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Cobro de renta mensual incluido'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Pago de renta puntual'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Recuperación y desalojo en tiempo record gestionado por Mica'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Protección de rentas caídas'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Opción de adelantar rentas'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Seguro contra daños'
+      }
+    ],
+    inquilinos: [
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Renta con o sin aval'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Resultado de investigación max. 24hrs'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Proceso 100% digital y sencillo'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Contrato de arrendamiento justo'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Posibilidad de diferir depósito o costos de mudanza**'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Usa los pagos para mejorar tu historial crediticio mes con mes'
+      }
+    ],
+    asesores: [
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Cierra operaciones más rápido'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Investigación y contrato en 24hrs'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Extraordinarias comisiones'
+      },
+      {
+        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+        text: 'Servicio seguro y ágil'
+      }
+    ]
+  };
+
+  const benefits = benefitsData[type];
+  
+  return (
+    <ul className="space-y-4">
+      {benefits.map((benefit, index) => (
+        <li key={index} className="flex items-start">
+          <div className="mr-3 shrink-0 mt-1">
+            {benefit.icon}
+          </div>
+          <span className="text-gray-700">{benefit.text}</span>
+        </li>
+      ))}
+      {type === 'inquilinos' && (
+        <li className="text-xs text-gray-500 mt-6">
+          **Servicio operado por un partner Mica
+        </li>
+      )}
+    </ul>
+  );
+};
 
 const Features = () => {
   // Animation variants
@@ -66,17 +141,34 @@ const Features = () => {
   };
 
   return (
-    <section id="features" className="py-20 bg-slate-50">
+    <section id="features" className="py-20 bg-white">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Nuestros Beneficios
+            Conoce nuestros productos
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Protección Completa para <span className="text-primary">Inquilinos</span>
+            ¿Qué es <span className="text-primary">Mica</span>?
           </h2>
           <p className="text-muted-foreground text-lg">
-            Ofrecemos una amplia gama de servicios de protección para asegurar que tu experiencia como inquilino sea segura y sin estrés.
+            Creamos la mejor protección para el arrendamiento en México.
+          </p>
+        </div>
+        
+        {/* Eco-system image */}
+        <div className="flex justify-center mb-16">
+          <div className="relative max-w-lg">
+            <img 
+              src="/public/lovable-uploads/123802e5-dd86-46c3-a3f5-e2e4aae42406.png" 
+              alt="Ecosistema Mica" 
+              className="mx-auto"
+            />
+          </div>
+        </div>
+
+        <div className="text-center mb-12">
+          <p className="text-lg">
+            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong>renta más segura, ágil y conveniente</strong>.
           </p>
         </div>
         
@@ -85,24 +177,37 @@ const Features = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16"
         >
-          {featuresList.map((feature, index) => (
-            <motion.div 
-              key={index}
-              variants={itemVariants}
-              className={cn(
-                "mica-card",
-                "border border-slate-100 hover:border-primary/20"
-              )}
-            >
-              <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
-            </motion.div>
-          ))}
+          {/* Propietarios */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
+          >
+            <h3 className="text-2xl font-bold mb-4">Propietarios</h3>
+            <p className="text-gray-600 mb-6">Protege tu patrimonio y deja el cobro de renta en nuestras manos</p>
+            <UserBenefits type="propietarios" />
+          </motion.div>
+          
+          {/* Inquilinos */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
+          >
+            <h3 className="text-2xl font-bold mb-4">Inquilinos</h3>
+            <p className="text-gray-600 mb-6">Renta inmuebles con o sin necesidad de aval o depósitos extra.</p>
+            <UserBenefits type="inquilinos" />
+          </motion.div>
+          
+          {/* Asesores */}
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
+          >
+            <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
+            <p className="text-gray-600 mb-6">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
+            <UserBenefits type="asesores" />
+          </motion.div>
         </motion.div>
       </div>
     </section>

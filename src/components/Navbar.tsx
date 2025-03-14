@@ -47,7 +47,7 @@ const Navbar = () => {
       <div className="container px-4 mx-auto flex justify-between items-center">
         <a href="#" className="flex items-center">
           <img 
-            src="/public/lovable-uploads/b491c3e0-ae9a-4991-a492-dc5de51b82fb.png" 
+            src="/public/lovable-uploads/ff9ce11f-edef-49d1-8483-7bcf51c548d0.png" 
             alt="Mica Logo" 
             className="h-10"
           />

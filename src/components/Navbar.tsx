@@ -46,8 +46,11 @@ const Navbar = () => {
     )}>
       <div className="container px-4 mx-auto flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <span className="font-bold text-xl">mica</span>
-          <span className="font-bold text-xl text-primary">.rent</span>
+          <img 
+            src="/public/lovable-uploads/b491c3e0-ae9a-4991-a492-dc5de51b82fb.png" 
+            alt="Mica Logo" 
+            className="h-10"
+          />
         </a>
 
         {/* Desktop Navigation */}
@@ -56,20 +59,20 @@ const Navbar = () => {
             <a 
               key={index} 
               href={link.href} 
-              className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+              className="text-sm font-medium text-mica-gray-1 hover:text-mica-green transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <Button className="bg-primary text-primary-foreground rounded-lg px-6 h-10 hover:bg-primary/90">
-            Protege tu Renta
+          <Button className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90">
+            Inicia sesión
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu} 
-          className="md:hidden text-slate-800 focus:outline-none"
+          className="md:hidden text-mica-gray-1 focus:outline-none"
           aria-label={isOpen ? "Cerrar Menú" : "Abrir Menú"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -91,17 +94,17 @@ const Navbar = () => {
                 <a 
                   key={index} 
                   href={link.href} 
-                  className="py-2 text-slate-600 hover:text-primary transition-colors"
+                  className="py-2 text-mica-gray-1 hover:text-mica-green transition-colors"
                   onClick={closeMenu}
                 >
                   {link.name}
                 </a>
               ))}
               <Button 
-                className="bg-primary text-primary-foreground rounded-lg w-full hover:bg-primary/90" 
+                className="bg-mica-green text-white rounded-lg w-full hover:bg-mica-green/90" 
                 onClick={closeMenu}
               >
-                Protege tu Renta
+                Inicia sesión
               </Button>
             </div>
           </motion.div>

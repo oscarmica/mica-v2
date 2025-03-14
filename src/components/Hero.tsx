@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-[#fdf2f8] to-white">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-white">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
           <div className="text-center relative z-10">
@@ -18,7 +18,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-bold mb-4 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Protege tu <span className="text-primary">Renta</span> en México
+              Tu seguro de <span className="text-mica-green">depósito</span> en México
             </motion.h1>
             
             {/* Description */}
@@ -26,10 +26,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance"
+              className="text-mica-gray-2 text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance"
             >
-              La manera más sencilla de proteger tu depósito y garantizar tu tranquilidad.
-              Sin aval, sin buró de crédito y 100% en línea.
+              Olvídate del depósito en garantía. Paga un seguro mensual económico y recupera el 100% de tu dinero.
             </motion.p>
             
             {/* CTA Buttons */}
@@ -39,11 +38,11 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button className="bg-primary text-primary-foreground rounded-lg px-8 py-6 text-base h-auto group">
+              <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
                 Comienza ya
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" className="border-2 border-slate-200 bg-white text-slate-800 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">
+              <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">
                 Conoce más
               </Button>
             </motion.div>
@@ -53,9 +52,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12 flex items-center justify-center space-x-2 text-sm text-slate-500"
+              className="mt-12 flex items-center justify-center space-x-2 text-sm text-mica-gray-3"
             >
-              <span>Más de 10,000 rentas protegidas en todo México</span>
+              <span>Más de 10,000 inquilinos protegidos en todo México</span>
             </motion.div>
           </div>
           
@@ -68,8 +67,8 @@ const Hero = () => {
           >
             <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1503174971373-b1f69a8738cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-                alt="Apartamento en México protegido por mica.rent" 
+                src="/public/lovable-uploads/ebe01cde-4d86-4836-8870-9d6f35b8849e.png" 
+                alt="Apartamento protegido por Mica" 
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />

@@ -56,7 +56,33 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+                // Mica brand colors
+                mica: {
+                    green: {
+                        DEFAULT: '#21a484',
+                        accent: '#72dda3',
+                    },
+                    blue: {
+                        baby: '#bbe3e3',
+                    },
+                    pink: {
+                        baby: '#f9d3cd',
+                    },
+                    orange: {
+                        DEFAULT: '#f3ce98',
+                        left: '#f7749f',
+                        baby: '#ffb59c',
+                        faded: '#f9d3df',
+                    },
+                    gray: {
+                        1: '#27272a',
+                        2: '#3f3f46',
+                        3: '#52525b',
+                        4: '#a1a1aa',
+                        5: '#e4e4e7',
+                    }
+                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

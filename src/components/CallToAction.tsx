@@ -16,7 +16,7 @@ const CallToAction = () => {
           transition={{ duration: 0.6 }}
           className={cn(
             "rounded-3xl p-10 md:p-16 relative overflow-hidden",
-            "bg-gradient-to-br from-primary/90 to-primary/70 text-primary-foreground"
+            "bg-gradient-to-br from-mica-green to-mica-green/90 text-white"
           )}
         >
           {/* Background elements */}
@@ -37,7 +37,7 @@ const CallToAction = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  className="bg-white text-primary hover:bg-white/90 transition-all duration-300 group"
+                  className="bg-white text-mica-green hover:bg-white/90 transition-all duration-300 group"
                 >
                   Comienza Ahora
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -62,27 +62,27 @@ const CallToAction = () => {
                 <h3 className="text-2xl font-semibold mb-4">Planes de Protección</h3>
                 <ul className="space-y-4 mb-6">
                   <li className="flex items-center">
-                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-primary/30 flex items-center justify-center">
+                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-mica-green/30 flex items-center justify-center">
                       <ShieldCheck className="h-3 w-3" />
                     </div>
-                    <span>Protección Básica - $199/mes</span>
+                    <span>Plan Básico - $199/mes</span>
                   </li>
                   <li className="flex items-center">
-                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-primary/30 flex items-center justify-center">
+                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-mica-green/30 flex items-center justify-center">
                       <ShieldCheck className="h-3 w-3" />
                     </div>
-                    <span>Protección Estándar - $299/mes</span>
+                    <span>Plan Estándar - $299/mes</span>
                   </li>
                   <li className="flex items-center">
-                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-primary/30 flex items-center justify-center">
+                    <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-mica-green/30 flex items-center justify-center">
                       <ShieldCheck className="h-3 w-3" />
                     </div>
-                    <span>Protección Premium - $499/mes</span>
+                    <span>Plan Premium - $499/mes</span>
                   </li>
                 </ul>
                 <div className="bg-white/10 p-4 rounded-xl text-sm">
                   <p className="font-medium">Todos los planes incluyen:</p>
-                  <p className="text-white/70 mt-1">Protección de depósito, soporte 24/7 y asistencia legal para disputas.</p>
+                  <p className="text-white/70 mt-1">Protección del depósito, soporte 24/7 y asistencia legal para disputas.</p>
                 </div>
               </motion.div>
             </div>

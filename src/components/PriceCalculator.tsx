@@ -21,10 +21,15 @@ const protectionPlans = [
       "Gestión de cobranza",
       "Juicio recuperación de inmueble"
     ],
-    percentage: 0.025, // 2.5% mensual
-    yearlyFactor: 0.2, // 20% de un mes de renta
-    minPrice: 2200,
+    minPrice: {
+      monthly: 2200,
+      yearly: 2200
+    },
     minRentLimit: 11000, // Para rentas de $11,000 o menos
+    percentage: {
+      monthly: 0.025, // 2.5% mensual
+      yearly: 0.20 // 20% del monto de renta mensual
+    },
     color: "bg-blue-50 border-blue-200",
     iconColor: "text-blue-500"
   },
@@ -40,10 +45,15 @@ const protectionPlans = [
       "Desalojo express",
       "Seguro de daños por inquilino"
     ],
-    percentage: 0.0375, // 3.75% mensual
-    yearlyFactor: 0.3, // 30% de un mes de renta
-    minPrice: 2400,
+    minPrice: {
+      monthly: 2400,
+      yearly: 2400
+    },
     minRentLimit: 8000, // Para rentas de $8,000 o menos
+    percentage: {
+      monthly: 0.0375, // 3.75% mensual
+      yearly: 0.20 // 20% del monto de renta mensual
+    },
     color: "bg-green-50 border-green-200",
     iconColor: "text-mica-green"
   },
@@ -59,10 +69,15 @@ const protectionPlans = [
       "Garantía extendida",
       "Asesoría financiera"
     ],
-    percentage: 0.0625, // 6.25% mensual
-    yearlyFactor: 0.5, // 50% de un mes de renta
-    minPrice: 3500,
+    minPrice: {
+      monthly: 3500,
+      yearly: 3500
+    },
     minRentLimit: 7000, // Para rentas de $7,000 o menos
+    percentage: {
+      monthly: 0.0625, // 6.25% mensual
+      yearly: 0.50 // 50% del monto de renta mensual
+    },
     color: "bg-amber-50 border-amber-200",
     iconColor: "text-amber-500"
   }
@@ -83,10 +98,18 @@ const PriceCalculator = () => {
       
       if (isMonthly) {
         // Cálculo mensual
-        price = Math.max(plan.minPrice, rentAmount * plan.percentage);
+        if (rentAmount <= plan.minRentLimit) {
+          price = plan.minPrice.monthly;
+        } else {
+          price = rentAmount * plan.percentage.monthly;
+        }
       } else {
         // Cálculo anual (se paga una vez al año)
-        price = Math.max(plan.minPrice * 12 * 0.83, rentAmount * plan.yearlyFactor); // 17% descuento anual aprox
+        if (rentAmount <= plan.minRentLimit) {
+          price = plan.minPrice.yearly;
+        } else {
+          price = rentAmount * plan.percentage.yearly;
+        }
       }
       
       // Redondear a entero

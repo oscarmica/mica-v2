@@ -49,7 +49,7 @@ const Navbar = () => {
           <img 
             src="/public/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png" 
             alt="Mica Logo" 
-            className="h-10"
+            className="h-7" // Reducido en un 30% de h-10 a h-7
           />
         </a>
 

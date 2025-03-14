@@ -38,6 +38,11 @@ const Index = () => {
     return () => document.removeEventListener('click', handleAnchorClick);
   }, []);
 
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -45,14 +50,24 @@ const Index = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
+        className="overflow-hidden"
       >
         <Navbar />
-        <Hero />
-        <Features />
-        <PriceCalculator />
-        <HowItWorks />
-        <Testimonials />
-        <CallToAction />
+        
+        <main className="relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-to-b from-mica-green/5 to-transparent -z-10"></div>
+          <div className="absolute top-40 left-20 w-64 h-64 bg-pink-200/20 rounded-full filter blur-3xl -z-10"></div>
+          <div className="absolute top-80 right-20 w-72 h-72 bg-blue-200/20 rounded-full filter blur-3xl -z-10"></div>
+          
+          <Hero />
+          <Features />
+          <PriceCalculator />
+          <HowItWorks />
+          <Testimonials />
+          <CallToAction />
+        </main>
+        
         <Footer />
       </motion.div>
     </AnimatePresence>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -64,8 +64,9 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90">
+          <Button className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90 group">
             Inicia sesión
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </nav>
 
@@ -87,7 +88,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
-            className="md:hidden bg-white border-t overflow-hidden"
+            className="md:hidden bg-white border-t overflow-hidden shadow-lg"
           >
             <div className="container px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link, index) => (
@@ -101,10 +102,11 @@ const Navbar = () => {
                 </a>
               ))}
               <Button 
-                className="bg-mica-green text-white rounded-lg w-full hover:bg-mica-green/90" 
+                className="bg-mica-green text-white rounded-lg w-full hover:bg-mica-green/90 group" 
                 onClick={closeMenu}
               >
                 Inicia sesión
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </motion.div>

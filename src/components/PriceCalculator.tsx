@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { ShieldCheck, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -11,32 +12,59 @@ const protectionPlans = [
   {
     id: "juridica",
     title: "Protección Jurídica",
-    description: "Sin meses de protección",
+    description: "Protección legal para arrendadores",
+    features: [
+      "Investigación en 24h",
+      "Contrato de arrendamiento",
+      "Firma digital",
+      "Apoyo legal",
+      "Gestión de cobranza",
+      "Juicio recuperación de inmueble"
+    ],
     percentage: 0.025, // 2.5% mensual
     yearlyFactor: 0.2, // 20% de un mes de renta
     minPrice: 2200,
     minRentLimit: 11000, // Para rentas de $11,000 o menos
-    color: "bg-blue-100 border-blue-200"
+    color: "bg-blue-50 border-blue-200",
+    iconColor: "text-blue-500"
   },
   {
     id: "integral",
     title: "Protección Integral",
     description: "4 meses de protección",
+    features: [
+      "Todo lo de Protección Jurídica",
+      "Validación biométrica",
+      "Renta segura con o sin aval",
+      "Gestión de renta mensual",
+      "Desalojo express",
+      "Seguro de daños por inquilino"
+    ],
     percentage: 0.0375, // 3.75% mensual
     yearlyFactor: 0.3, // 30% de un mes de renta
     minPrice: 2400,
     minRentLimit: 8000, // Para rentas de $8,000 o menos
-    color: "bg-green-100 border-green-200"
+    color: "bg-green-50 border-green-200",
+    iconColor: "text-mica-green"
   },
   {
     id: "premium",
     title: "Protección Premium",
     description: "12 meses de protección",
+    features: [
+      "Todo lo de Protección Integral",
+      "Adelanto de renta",
+      "Mejora de historial crediticio",
+      "Atención prioritaria",
+      "Garantía extendida",
+      "Asesoría financiera"
+    ],
     percentage: 0.0625, // 6.25% mensual
     yearlyFactor: 0.5, // 50% de un mes de renta
     minPrice: 3500,
     minRentLimit: 7000, // Para rentas de $7,000 o menos
-    color: "bg-amber-100 border-amber-200"
+    color: "bg-amber-50 border-amber-200",
+    iconColor: "text-amber-500"
   }
 ];
 
@@ -44,6 +72,7 @@ const PriceCalculator = () => {
   const [rentAmount, setRentAmount] = useState<number>(10000);
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
   const [prices, setPrices] = useState<{[key: string]: number}>({});
+  const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
 
   // Calcular precios basados en el monto de renta
   useEffect(() => {
@@ -116,32 +145,8 @@ const PriceCalculator = () => {
             </div>
           </div>
 
-          {/* Opciones de planes */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {protectionPlans.map((plan) => (
-              <div 
-                key={plan.id} 
-                className={cn(
-                  "p-4 rounded-lg border-2 flex flex-col h-full",
-                  plan.color
-                )}
-              >
-                <h3 className="font-bold text-lg mb-1">{plan.title}</h3>
-                <p className="text-sm text-gray-600 mb-3">{plan.description}</p>
-                <div className="mt-auto">
-                  <div className="text-2xl font-bold text-gray-900">
-                    {formatCurrency(prices[plan.id] || 0)}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {isMonthly ? 'mensual*' : 'anual*'}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Selector de frecuencia */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mb-8">
             <ToggleGroup type="single" defaultValue="monthly" className="border rounded-full">
               <ToggleGroupItem 
                 value="monthly" 
@@ -160,67 +165,113 @@ const PriceCalculator = () => {
             </ToggleGroup>
           </div>
 
+          {/* Opciones de planes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {protectionPlans.map((plan) => (
+              <motion.div 
+                key={plan.id} 
+                className={cn(
+                  "p-6 rounded-lg border-2 flex flex-col h-full transition-all duration-300",
+                  plan.color,
+                  hoveredPlan === plan.id ? "shadow-lg transform -translate-y-1" : ""
+                )}
+                onMouseEnter={() => setHoveredPlan(plan.id)}
+                onMouseLeave={() => setHoveredPlan(null)}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex items-center mb-3">
+                  <ShieldCheck className={cn("mr-2 h-5 w-5", plan.iconColor)} />
+                  <h3 className="font-bold text-lg">{plan.title}</h3>
+                </div>
+                <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
+                
+                <div className="mb-4">
+                  <div className="text-3xl font-bold text-gray-900">
+                    {formatCurrency(prices[plan.id] || 0)}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {isMonthly ? 'mensual*' : 'anual*'}
+                  </div>
+                </div>
+                
+                <div className="border-t border-gray-200 pt-4 mt-auto">
+                  <h4 className="font-semibold text-sm mb-2">Incluye:</h4>
+                  <ul className="space-y-2">
+                    {plan.features.map((feature, index) => (
+                      <li key={index} className="flex items-start text-sm">
+                        <Check className={cn("mr-2 h-4 w-4 flex-shrink-0 mt-0.5", plan.iconColor)} />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
           <div className="text-xs text-gray-500 mt-6 text-center">
             *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
           </div>
         </motion.div>
 
         <div className="mt-8 text-center">
-          <h3 className="text-xl font-semibold mb-4">Todas las protecciones incluyen:</h3>
-          <ul className="text-left max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-2">
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Investigación en menos de 24h
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Renta segura con o sin aval
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Validación biométrica de identidad
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Contrato de arrendamiento
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Firma digital
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Apoyo legal
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Gestión de renta mensual
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Adelanto de renta
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Mejora de historial crediticio para inquilinos
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Desalojo express
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Gestión de cobranza
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Juicio recuperación de inmueble
-            </li>
-            <li className="flex items-start">
-              <span className="mr-2 text-mica-green">•</span>
-              Seguro de daños por inquilinos
-            </li>
-          </ul>
+          <h3 className="text-xl font-semibold mb-4">Ventajas para todos</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-5 rounded-lg shadow-sm">
+              <h4 className="font-bold mb-3 text-mica-green">Para propietarios</h4>
+              <ul className="text-left space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Renta garantizada
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Inquilinos verificados
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Seguro de daños
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm">
+              <h4 className="font-bold mb-3 text-mica-green">Para inquilinos</h4>
+              <ul className="text-left space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Renta sin aval
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Historial crediticio
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Proceso 100% digital
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white p-5 rounded-lg shadow-sm">
+              <h4 className="font-bold mb-3 text-mica-green">Para asesores</h4>
+              <ul className="text-left space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Cierre de operaciones
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Comisiones garantizadas
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-mica-green">•</span>
+                  Respaldo legal
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

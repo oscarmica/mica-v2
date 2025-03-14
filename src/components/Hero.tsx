@@ -39,7 +39,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
-                Inicia sesión
+                Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">

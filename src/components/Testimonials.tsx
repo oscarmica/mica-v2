@@ -6,23 +6,23 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "RentShield saved me from losing my security deposit. Their team stepped in and resolved the dispute with my landlord quickly and professionally.",
-    author: "Sarah Johnson",
-    title: "Protected Tenant",
+    quote: "mica.rent me salvó de perder mi depósito. Su equipo intervino y resolvió la disputa con mi arrendador de manera rápida y profesional.",
+    author: "Gabriela Rodríguez",
+    title: "Inquilina Protegida",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   },
   {
-    quote: "I was skeptical at first, but when I needed help with a maintenance issue that my landlord was ignoring, RentShield's legal team got it resolved within days.",
-    author: "Michael Chen",
-    title: "Happy Renter",
+    quote: "Al principio dudaba, pero cuando necesité ayuda con un problema de mantenimiento que mi arrendador ignoraba, el equipo legal de mica.rent lo resolvió en días.",
+    author: "Miguel Álvarez",
+    title: "Inquilino Satisfecho",
     rating: 5,
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   },
   {
-    quote: "As a first-time renter, I was worried about potential issues. RentShield gave me the confidence that I wouldn't be taken advantage of. Worth every penny.",
-    author: "Emma Rodriguez",
-    title: "New Tenant",
+    quote: "Como inquilina por primera vez, estaba preocupada por posibles problemas. mica.rent me dio la confianza de que no sería aprovechada. Vale cada peso.",
+    author: "Daniela Morales",
+    title: "Nueva Inquilina",
     rating: 5,
     image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
   }
@@ -30,7 +30,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-20 bg-[#fdf2f8]">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -40,13 +40,13 @@ const Testimonials = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              Testimonials
+              Testimonios
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              What Our <span className="text-primary">Protected</span> Tenants Say
+              Lo que Dicen Nuestros <span className="text-primary">Inquilinos</span> Protegidos
             </h2>
             <p className="text-slate-600 text-lg">
-              Don't just take our word for it. Hear from tenants who have experienced the benefits of our protection services.
+              No solo confíes en nuestra palabra. Escucha a los inquilinos que han experimentado los beneficios de nuestros servicios de protección.
             </p>
           </motion.div>
         </div>
@@ -61,7 +61,7 @@ const Testimonials = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={cn(
                 "bg-white p-8 rounded-xl border border-slate-100 shadow-sm",
-                "hover:shadow-md transition-all duration-300"
+                "hover:border-primary/20 hover:shadow-md transition-all duration-300"
               )}
             >
               <div className="flex space-x-1 mb-4">

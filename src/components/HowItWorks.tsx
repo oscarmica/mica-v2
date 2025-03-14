@@ -12,23 +12,23 @@ import {
 const steps = [
   {
     icon: <ClipboardCheck className="h-8 w-8 text-primary" />,
-    title: 'Sign Up',
-    description: 'Complete our simple online form with your rental details and choose your protection plan.'
+    title: 'Regístrate',
+    description: 'Completa nuestro formulario en línea con los detalles de tu renta y elige tu plan de protección.'
   },
   {
     icon: <CreditCard className="h-8 w-8 text-primary" />,
-    title: 'Make Payment',
-    description: 'Choose your preferred payment method and complete the secure transaction.'
+    title: 'Realiza el Pago',
+    description: 'Elige tu método de pago preferido y completa la transacción de forma segura.'
   },
   {
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: 'Get Protected',
-    description: 'Receive your protection certificate and details about your coverage.'
+    title: 'Obtén Protección',
+    description: 'Recibe tu certificado de protección y los detalles de tu cobertura al instante.'
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: 'Ongoing Support',
-    description: 'Access our 24/7 support team whenever you need assistance with your rental.'
+    title: 'Soporte Continuo',
+    description: 'Accede a nuestro equipo de soporte 24/7 cuando necesites asistencia con tu renta.'
   }
 ];
 
@@ -46,13 +46,13 @@ const HowItWorks = () => {
               transition={{ duration: 0.5 }}
             >
               <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Simple Process
+                Proceso Simple
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                How RentShield <span className="text-primary">Works</span>
+                Cómo Funciona <span className="text-primary">mica.rent</span>
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Our streamlined process makes it easy to get protected. Just follow these simple steps and gain peace of mind with your rental.
+                Nuestro proceso simplificado facilita la obtención de protección. Sigue estos sencillos pasos y obtén tranquilidad con tu renta.
               </p>
             </motion.div>
             
@@ -90,10 +90,10 @@ const HowItWorks = () => {
             className="relative"
           >
             <div className="absolute -inset-4 bg-primary/5 rounded-3xl -z-10"></div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                alt="Person signing rental protection document" 
+                src="https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                alt="Persona firmando documentos de protección de renta" 
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
@@ -114,10 +114,10 @@ const HowItWorks = () => {
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <ShieldCheck className="h-6 w-6 text-primary" />
                 </div>
-                <h4 className="font-semibold">Protection Active</h4>
+                <h4 className="font-semibold">Protección Activa</h4>
               </div>
               <p className="text-sm text-muted-foreground">
-                "Got protected in less than 5 minutes. The process was incredibly simple!"
+                "Me tomó menos de 5 minutos obtener mi protección. ¡El proceso fue increíblemente sencillo!"
               </p>
             </motion.div>
           </motion.div>

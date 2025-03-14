@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -32,11 +32,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Features", href: "#features" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Inicio", href: "#" },
+    { name: "Cómo Funciona", href: "#how-it-works" },
+    { name: "Beneficios", href: "#features" },
+    { name: "Testimonios", href: "#testimonials" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   return (
@@ -45,9 +45,9 @@ const Navbar = () => {
       isScrolled ? "py-3 bg-white/95 shadow-sm backdrop-blur-sm" : "py-5 bg-transparent"
     )}>
       <div className="container px-4 mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center space-x-2">
-          <Shield className="h-8 w-8 text-primary" />
-          <span className="font-bold text-xl">RentShield</span>
+        <a href="#" className="flex items-center">
+          <span className="font-bold text-xl">mica</span>
+          <span className="font-bold text-xl text-primary">.rent</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -61,14 +61,16 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-primary text-white rounded-full px-6 h-10 hover:bg-primary/90">Get Protected</Button>
+          <Button className="bg-primary text-primary-foreground rounded-lg px-6 h-10 hover:bg-primary/90">
+            Protege tu Renta
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
           onClick={toggleMenu} 
           className="md:hidden text-slate-800 focus:outline-none"
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-label={isOpen ? "Cerrar Menú" : "Abrir Menú"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -96,10 +98,10 @@ const Navbar = () => {
                 </a>
               ))}
               <Button 
-                className="bg-primary text-white rounded-full w-full hover:bg-primary/90" 
+                className="bg-primary text-primary-foreground rounded-lg w-full hover:bg-primary/90" 
                 onClick={closeMenu}
               >
-                Get Protected
+                Protege tu Renta
               </Button>
             </div>
           </motion.div>

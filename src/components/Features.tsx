@@ -14,33 +14,33 @@ import { motion } from 'framer-motion';
 const featuresList = [
   {
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: 'Deposit Protection',
-    description: 'Secure your deposit with our comprehensive protection plan that ensures you get your money back.'
+    title: 'Protección de Depósito',
+    description: 'Asegura la devolución de tu depósito al finalizar tu contrato, sin complicaciones.'
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: 'Quick Response',
-    description: 'Get help within 24 hours for any rental issue that arises during your tenancy period.'
+    title: 'Proceso Rápido',
+    description: 'Obtén tu protección en menos de 5 minutos, 100% en línea y sin papeleo.'
   },
   {
     icon: <FileCheck className="h-8 w-8 text-primary" />,
-    title: 'Legal Support',
-    description: 'Access to professional legal advice for any disputes or issues with your landlord or property.'
+    title: 'Soporte Legal',
+    description: 'Acceso a asesoría legal profesional para cualquier disputa con tu arrendador.'
   },
   {
     icon: <UserCheck className="h-8 w-8 text-primary" />,
-    title: 'Tenant Advocacy',
-    description: 'We represent your interests and ensure your rights as a tenant are protected at all times.'
+    title: 'Sin Aval Requerido',
+    description: 'Renta sin necesidad de un aval o fiador. Nosotros respaldamos tu contrato.'
   },
   {
     icon: <Building className="h-8 w-8 text-primary" />,
-    title: 'Property Inspection',
-    description: 'Professional evaluation of property condition at move-in and move-out to prevent disputes.'
+    title: 'Compatible con Cualquier Propiedad',
+    description: 'Nuestro servicio funciona con todo tipo de propiedades residenciales en México.'
   },
   {
     icon: <Percent className="h-8 w-8 text-primary" />,
-    title: 'Affordable Plans',
-    description: 'Protection plans starting at just a small percentage of your monthly rent for complete peace of mind.'
+    title: 'Planes Accesibles',
+    description: 'Paga solo un pequeño porcentaje de tu renta mensual por una protección completa.'
   }
 ];
 
@@ -70,13 +70,13 @@ const Features = () => {
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            Our Features
+            Nuestros Beneficios
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Comprehensive Rental <span className="text-primary">Protection</span>
+            Protección Completa para <span className="text-primary">Inquilinos</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            We offer a wide range of protection services to ensure your renting experience is secure, fair, and stress-free.
+            Ofrecemos una amplia gama de servicios de protección para asegurar que tu experiencia como inquilino sea segura y sin estrés.
           </p>
         </div>
         
@@ -92,8 +92,8 @@ const Features = () => {
               key={index}
               variants={itemVariants}
               className={cn(
-                "relative p-8 rounded-xl bg-white shadow-sm",
-                "border border-slate-100 hover:shadow-md transition-all duration-300"
+                "mica-card",
+                "border border-slate-100 hover:border-primary/20"
               )}
             >
               <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10">

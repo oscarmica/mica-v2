@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, Home, Calendar } from "lucide-react";
+import { ArrowRight, ShieldCheck, Home, Calendar, Clock, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+
 const Hero = () => {
   const containerVariants = {
     hidden: {
@@ -15,6 +17,7 @@ const Hero = () => {
       }
     }
   };
+
   const itemVariants = {
     hidden: {
       y: 20,
@@ -29,16 +32,30 @@ const Hero = () => {
       }
     }
   };
-  const features = [{
-    icon: <ShieldCheck className="h-5 w-5 text-mica-green" />,
-    text: "Protección jurídica completa"
-  }, {
-    icon: <Home className="h-5 w-5 text-mica-green" />,
-    text: "Renta sin aval"
-  }, {
-    icon: <Calendar className="h-5 w-5 text-mica-green" />,
-    text: "Proceso 100% digital"
-  }];
+
+  const features = [
+    {
+      icon: <ShieldCheck className="h-5 w-5 text-mica-green" />,
+      text: "Protección jurídica completa"
+    }, 
+    {
+      icon: <Home className="h-5 w-5 text-mica-green" />,
+      text: "Renta sin aval"
+    }, 
+    {
+      icon: <Calendar className="h-5 w-5 text-mica-green" />,
+      text: "Proceso 100% digital"
+    },
+    {
+      icon: <Clock className="h-5 w-5 text-mica-green" />,
+      text: "Soporte 24/7"
+    },
+    {
+      icon: <UserCheck className="h-5 w-5 text-mica-green" />,
+      text: "Asistencia legal"
+    }
+  ];
+
   return <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
@@ -77,18 +94,6 @@ const Hero = () => {
                 Conoce más
               </Button>
             </motion.div>
-            
-            {/* Trust indicators */}
-            <motion.div variants={itemVariants} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-mica-gray-3">
-              <div className="flex items-center">
-                <ShieldCheck className="mr-2 h-5 w-5 text-mica-green" />
-                <span>Protección garantizada</span>
-              </div>
-              <div className="flex items-center">
-                <Calendar className="mr-2 h-5 w-5 text-mica-green" />
-                <span>Investigación en 24 horas</span>
-              </div>
-            </motion.div>
           </motion.div>
           
           {/* Hero image */}
@@ -97,4 +102,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;

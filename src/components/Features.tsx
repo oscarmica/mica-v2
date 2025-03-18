@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building } from 'lucide-react';
@@ -146,12 +147,6 @@ const Features = () => {
         {/* Flex Numbers */}
         <FlexNumbers />
         
-        <div className="text-center mb-12">
-          <p className="text-lg">
-            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong>renta más segura, ágil y conveniente</strong>.
-          </p>
-        </div>
-        
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,
         margin: "-100px"
@@ -177,6 +172,12 @@ const Features = () => {
             <UserBenefits type="asesores" />
           </motion.div>
         </motion.div>
+        
+        <div className="text-center mt-12">
+          <p className="text-lg">
+            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong>renta más segura, ágil y conveniente</strong>.
+          </p>
+        </div>
       </div>
     </section>;
 };

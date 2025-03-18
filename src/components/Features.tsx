@@ -1,147 +1,117 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { 
-  ShieldCheck, 
-  Clock, 
-  FileCheck, 
-  UserCheck, 
-  BadgeCheck,
-  Percent 
-} from 'lucide-react';
+import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Componente para los diferentes beneficios según el tipo de usuario
-const UserBenefits = ({ type }: { type: 'propietarios' | 'inquilinos' | 'asesores' }) => {
+const UserBenefits = ({
+  type
+}: {
+  type: 'propietarios' | 'inquilinos' | 'asesores';
+}) => {
   const benefitsData = {
-    propietarios: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Investigación detallada de inquilinos'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Prevención de extinción de dominio'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Cobro de renta mensual incluido'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Pago de renta puntual'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Recuperación y desalojo en tiempo record gestionado por Mica'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Protección de rentas caídas'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Opción de adelantar rentas'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Seguro contra daños'
-      }
-    ],
-    inquilinos: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Renta con o sin aval'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Resultado de investigación max. 24hrs'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Proceso 100% digital y sencillo'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Contrato de arrendamiento justo'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Posibilidad de diferir depósito o costos de mudanza**'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Usa los pagos para mejorar tu historial crediticio mes con mes'
-      }
-    ],
-    asesores: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Cierra operaciones más rápido'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Investigación y contrato en 24hrs'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Extraordinarias comisiones'
-      },
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Servicio seguro y ágil'
-      }
-    ]
+    propietarios: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Investigación detallada de inquilinos'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Prevención de extinción de dominio'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Cobro de renta mensual incluido'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Pago de renta puntual'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Recuperación y desalojo en tiempo record gestionado por Mica'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Protección de rentas caídas'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Opción de adelantar rentas'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Seguro contra daños'
+    }],
+    inquilinos: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Renta con o sin aval'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Resultado de investigación max. 24hrs'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Proceso 100% digital y sencillo'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Contrato de arrendamiento justo'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Posibilidad de diferir depósito o costos de mudanza**'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Usa los pagos para mejorar tu historial crediticio mes con mes'
+    }],
+    asesores: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Cierra operaciones más rápido'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Investigación y contrato en 24hrs'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Extraordinarias comisiones'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Servicio seguro y ágil'
+    }]
   };
-
   const benefits = benefitsData[type];
-  
-  return (
-    <ul className="space-y-4">
-      {benefits.map((benefit, index) => (
-        <li key={index} className="flex items-start">
+  return <ul className="space-y-4">
+      {benefits.map((benefit, index) => <li key={index} className="flex items-start">
           <div className="mr-3 shrink-0 mt-1">
             {benefit.icon}
           </div>
           <span className="text-gray-700">{benefit.text}</span>
-        </li>
-      ))}
-      {type === 'inquilinos' && (
-        <li className="text-xs text-gray-500 mt-6">
+        </li>)}
+      {type === 'inquilinos' && <li className="text-xs text-gray-500 mt-6">
           **Servicio operado por un partner Mica
-        </li>
-      )}
-    </ul>
-  );
+        </li>}
+    </ul>;
 };
-
 const Features = () => {
   // Animation variants
   const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
+    hidden: {
+      opacity: 0
+    },
+    visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1
       }
     }
   };
-  
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    hidden: {
+      y: 20,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
       opacity: 1,
-      transition: { type: 'spring', stiffness: 50 }
+      transition: {
+        type: 'spring',
+        stiffness: 50
+      }
     }
   };
-
-  return (
-    <section id="features" className="py-20 bg-white">
+  return <section id="features" className="py-20 bg-white">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -156,15 +126,7 @@ const Features = () => {
         </div>
         
         {/* Eco-system image */}
-        <div className="flex justify-center mb-16">
-          <div className="relative max-w-lg">
-            <img 
-              src="/public/lovable-uploads/123802e5-dd86-46c3-a3f5-e2e4aae42406.png" 
-              alt="Ecosistema Mica" 
-              className="mx-auto"
-            />
-          </div>
-        </div>
+        
 
         <div className="text-center mb-12">
           <p className="text-lg">
@@ -172,46 +134,32 @@ const Features = () => {
           </p>
         </div>
         
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16"
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+        once: true,
+        margin: "-100px"
+      }} className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
           {/* Propietarios */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
             <h3 className="text-2xl font-bold mb-4">Propietarios</h3>
             <p className="text-gray-600 mb-6">Protege tu patrimonio y deja el cobro de renta en nuestras manos</p>
             <UserBenefits type="propietarios" />
           </motion.div>
           
           {/* Inquilinos */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
             <h3 className="text-2xl font-bold mb-4">Inquilinos</h3>
             <p className="text-gray-600 mb-6">Renta inmuebles con o sin necesidad de aval o depósitos extra.</p>
             <UserBenefits type="inquilinos" />
           </motion.div>
           
           {/* Asesores */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
             <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
             <p className="text-gray-600 mb-6">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
             <UserBenefits type="asesores" />
           </motion.div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Features;

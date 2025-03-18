@@ -9,6 +9,7 @@ import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import MicaAdvantages from '@/components/MicaAdvantages';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -62,6 +63,7 @@ const Index = () => {
           
           <Hero />
           <Features />
+          <MicaAdvantages />
           <PriceCalculator />
           <HowItWorks />
           <Testimonials />

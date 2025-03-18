@@ -3,13 +3,12 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import Features from '@/components/Features';
 import PriceCalculator from '@/components/PriceCalculator';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
-import MicaAdvantages from '@/components/MicaAdvantages';
+import CombinedMicaFeatures from '@/components/CombinedMicaFeatures';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -70,8 +69,7 @@ const Index = () => {
           <div className="absolute top-80 right-20 w-72 h-72 bg-blue-200/20 rounded-full filter blur-3xl -z-10"></div>
           
           <Hero />
-          <Features />
-          <MicaAdvantages />
+          <CombinedMicaFeatures />
           <div id="calculator">
             <PriceCalculator />
           </div>

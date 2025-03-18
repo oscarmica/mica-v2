@@ -21,20 +21,12 @@ const PriceCalculator = () => {
     protectionPlans.forEach(plan => {
       let price;
       
-      if (isMonthly) {
-        // Cálculo mensual
-        if (rentAmount <= plan.minRentLimit) {
-          price = plan.minPrice.monthly;
-        } else {
-          price = rentAmount * plan.percentage.monthly;
-        }
+      if (rentAmount <= plan.minRentLimit) {
+        // Si el monto de renta es menor o igual al límite mínimo, usar precio mínimo
+        price = isMonthly ? plan.minPrice.monthly : plan.minPrice.yearly;
       } else {
-        // Cálculo anual (se paga una vez al año)
-        if (rentAmount <= plan.minRentLimit) {
-          price = plan.minPrice.yearly;
-        } else {
-          price = rentAmount * plan.percentage.yearly;
-        }
+        // Si el monto de renta es mayor al límite, calcular por porcentaje
+        price = rentAmount * (isMonthly ? plan.percentage.monthly : plan.percentage.yearly);
       }
       
       // Redondear a entero

@@ -31,7 +31,7 @@ export const protectionPlans: ProtectionPlan[] = [
       "Juicio recuperación de inmueble"
     ],
     minPrice: {
-      monthly: 2200,
+      monthly: 275,
       yearly: 2200
     },
     minRentLimit: 11000, // Para rentas de $11,000 o menos
@@ -55,13 +55,13 @@ export const protectionPlans: ProtectionPlan[] = [
       "Seguro de daños por inquilino"
     ],
     minPrice: {
-      monthly: 2400,
+      monthly: 300,
       yearly: 2400
     },
     minRentLimit: 8000, // Para rentas de $8,000 o menos
     percentage: {
       monthly: 0.0375, // 3.75% mensual
-      yearly: 0.20 // 20% del monto de renta mensual
+      yearly: 0.30 // 30% del monto de renta mensual
     },
     color: "bg-green-50 border-green-200",
     iconColor: "text-mica-green"
@@ -79,7 +79,7 @@ export const protectionPlans: ProtectionPlan[] = [
       "Asesoría financiera"
     ],
     minPrice: {
-      monthly: 3500,
+      monthly: 437.50,
       yearly: 3500
     },
     minRentLimit: 7000, // Para rentas de $7,000 o menos

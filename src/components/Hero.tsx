@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Home, Calendar, Clock, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
 const Hero = () => {
   const containerVariants = {
     hidden: {
@@ -17,7 +15,6 @@ const Hero = () => {
       }
     }
   };
-
   const itemVariants = {
     hidden: {
       y: 20,
@@ -32,30 +29,22 @@ const Hero = () => {
       }
     }
   };
-
-  const features = [
-    {
-      icon: <Calendar className="h-5 w-5 text-mica-green" />,
-      text: "Investigaciones en -24hrs"
-    }, 
-    {
-      icon: <Home className="h-5 w-5 text-mica-green" />,
-      text: "Renta sin aval"
-    }, 
-    {
-      icon: <Calendar className="h-5 w-5 text-mica-green" />,
-      text: "Proceso 100% digital"
-    },
-    {
-      icon: <Clock className="h-5 w-5 text-mica-green" />,
-      text: "Soporte 24/7"
-    },
-    {
-      icon: <UserCheck className="h-5 w-5 text-mica-green" />,
-      text: "Asistencia legal"
-    }
-  ];
-
+  const features = [{
+    icon: <Calendar className="h-5 w-5 text-mica-green" />,
+    text: "Investigaciones en -24hrs"
+  }, {
+    icon: <Home className="h-5 w-5 text-mica-green" />,
+    text: "Renta sin aval"
+  }, {
+    icon: <Calendar className="h-5 w-5 text-mica-green" />,
+    text: "Proceso 100% digital"
+  }, {
+    icon: <Clock className="h-5 w-5 text-mica-green" />,
+    text: "Soporte 24/7"
+  }, {
+    icon: <UserCheck className="h-5 w-5 text-mica-green" />,
+    text: "Asistencia legal"
+  }];
   return <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
@@ -63,7 +52,7 @@ const Hero = () => {
             {/* Emoji Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center bg-mica-green/10 text-mica-green rounded-full px-4 py-1.5 mb-6">
               <span className="mr-2 text-lg">🏠</span>
-              <span className="font-medium text-sm">La mejor protección para arrendamiento</span>
+              <span className="font-medium text-sm">Somos tu aliado en rentas.</span>
             </motion.div>
             
             {/* Main heading */}
@@ -90,9 +79,7 @@ const Hero = () => {
                 Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">
-                Conoce más
-              </Button>
+              <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">Agendar Demo</Button>
             </motion.div>
           </motion.div>
           
@@ -102,5 +89,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;

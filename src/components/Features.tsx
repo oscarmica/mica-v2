@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building } from 'lucide-react';
@@ -88,44 +87,21 @@ const UserBenefits = ({
 
 // Componente para los números de logros (flex numbers)
 const FlexNumbers = () => {
-  const stats = [
-    {
-      icon: <FileCheck className="h-8 w-8 text-mica-green" />,
-      number: "+15,000",
-      label: "rentas"
-    },
-    {
-      icon: <Users className="h-8 w-8 text-mica-green" />,
-      number: "+500",
-      label: "agentes inmobiliarios"
-    },
-    {
-      icon: <Building className="h-8 w-8 text-mica-green" />,
-      number: "+700",
-      label: "propiedades administradas"
-    }
-  ];
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
-      {stats.map((stat, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center text-center p-6 bg-mica-green/5 rounded-xl"
-        >
-          <div className="mb-4">{stat.icon}</div>
-          <h4 className="text-3xl font-bold text-mica-green mb-1">{stat.number}</h4>
-          <p className="text-gray-600">{stat.label}</p>
-        </motion.div>
-      ))}
-    </div>
-  );
+  const stats = [{
+    icon: <FileCheck className="h-8 w-8 text-mica-green" />,
+    number: "+15,000",
+    label: "rentas"
+  }, {
+    icon: <Users className="h-8 w-8 text-mica-green" />,
+    number: "+500",
+    label: "agentes inmobiliarios"
+  }, {
+    icon: <Building className="h-8 w-8 text-mica-green" />,
+    number: "+700",
+    label: "propiedades administradas"
+  }];
+  return;
 };
-
 const Features = () => {
   // Animation variants
   const containerVariants = {

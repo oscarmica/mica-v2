@@ -69,7 +69,7 @@ const HowItWorks = () => {
             <span className="font-medium text-sm">Proceso Simple</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Cómo Funciona <span className="text-mica-green">mica.rent</span>
+            Cómo Funciona <span className="text-mica-green">mica</span>
           </h2>
           <p className="text-mica-gray-2 text-lg">
             Nuestro proceso simplificado facilita la obtención de protección. Sigue estos sencillos pasos y obtén tranquilidad con tu renta.

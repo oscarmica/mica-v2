@@ -106,40 +106,7 @@ const HowItWorks = () => {
             </motion.div>)}
         </motion.div>
         
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5,
-        delay: 0.5
-      }} className="mt-16 text-center">
-          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">¿Listo para comenzar?</h3>
-            <p className="text-mica-gray-3 mb-6">
-              Obtén protección para tu renta en menos de 5 minutos. 
-              Nuestro proceso digital te permite asegurar tu vivienda al instante.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-mica-green text-white group">
-                Comenzar ahora
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="outline" className="border-gray-200">
-                Ver planes
-              </Button>
-            </div>
-            
-            <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-center text-sm text-mica-gray-3">
-              <Check className="h-4 w-4 text-mica-green mr-2" />
-              <span>Más de 10,000 inquilinos protegidos en México</span>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>;
 };

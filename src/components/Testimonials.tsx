@@ -25,7 +25,7 @@ const testimonials = [{
   highlight: "Tranquilidad para nuevos inquilinos"
 }];
 const Testimonials = () => {
-  return <section id="testimonials" className="py-20 bg-[#fdf2f8]">
+  return <section id="testimonials" className="bg-[#fdf2f8] py-0">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div initial={{

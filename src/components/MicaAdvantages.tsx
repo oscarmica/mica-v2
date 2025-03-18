@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Shield, Clock, HeartHandshake, CheckCircle2 } from 'lucide-react';
+import { Zap, Shield, Clock, HeartHandshake, CheckCircle2, BarChart4, Sparkles } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
 
 const MicaAdvantages = () => {
   const advantages = [
@@ -62,22 +63,92 @@ const MicaAdvantages = () => {
           ))}
         </motion.div>
 
-        <div className="mt-16 bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <div className="flex items-start">
-            <div className="mr-4 mt-1">
-              <CheckCircle2 className="h-6 w-6 text-mica-green" />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 bg-gradient-to-br from-white to-slate-50 p-8 sm:p-10 rounded-xl shadow-sm border border-gray-100"
+        >
+          <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-6 mb-6">
+            <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4 md:mb-0 text-primary">
+              <Sparkles className="h-7 w-7" />
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-2">La diferencia Mica</h4>
-              <p className="text-gray-600">
-                A diferencia de las pólizas jurídicas tradicionales, Mica integra tecnología, agilidad y un servicio más completo. 
-                Mientras otras opciones ofrecen principalmente protección legal, nosotros brindamos una solución integral que incluye 
-                verificación rápida, cobertura extendida y soporte constante, todo ello diseñado para que tanto propietarios como 
-                inquilinos disfruten de un proceso de arrendamiento más conveniente y seguro.
-              </p>
+              <h3 className="text-2xl font-bold mb-2 text-gray-800">La diferencia Mica</h3>
+              <div className="flex space-x-4 text-sm text-gray-500 mb-2">
+                <div className="flex items-center">
+                  <BarChart4 className="h-4 w-4 mr-1 text-primary" />
+                  <span>+15,000 rentas</span>
+                </div>
+                <Separator orientation="vertical" className="h-4" />
+                <div className="flex items-center">
+                  <Shield className="h-4 w-4 mr-1 text-primary" />
+                  <span>+700 propiedades</span>
+                </div>
+              </div>
+              <Separator className="my-4" />
             </div>
           </div>
-        </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+            <div className="flex">
+              <div className="mr-3 mt-1 flex-shrink-0">
+                <CheckCircle2 className="h-5 w-5 text-mica-green" />
+              </div>
+              <div>
+                <h4 className="text-md font-semibold mb-1">Integración tecnológica</h4>
+                <p className="text-gray-600 text-sm">
+                  Mientras otras opciones se mantienen con procesos tradicionales, nuestras soluciones tecnológicas agilizan cada etapa.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex">
+              <div className="mr-3 mt-1 flex-shrink-0">
+                <CheckCircle2 className="h-5 w-5 text-mica-green" />
+              </div>
+              <div>
+                <h4 className="text-md font-semibold mb-1">Verificación rápida</h4>
+                <p className="text-gray-600 text-sm">
+                  Eliminamos los largos tiempos de espera con nuestro proceso de verificación de inquilinos extremadamente ágil.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex">
+              <div className="mr-3 mt-1 flex-shrink-0">
+                <CheckCircle2 className="h-5 w-5 text-mica-green" />
+              </div>
+              <div>
+                <h4 className="text-md font-semibold mb-1">Cobertura extendida</h4>
+                <p className="text-gray-600 text-sm">
+                  Ofrecemos hasta 15 meses de protección contra impago, superando ampliamente las coberturas tradicionales.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex">
+              <div className="mr-3 mt-1 flex-shrink-0">
+                <CheckCircle2 className="h-5 w-5 text-mica-green" />
+              </div>
+              <div>
+                <h4 className="text-md font-semibold mb-1">Soporte constante</h4>
+                <p className="text-gray-600 text-sm">
+                  No desaparecemos después de firmar. Nuestro equipo te acompaña durante toda la relación de arrendamiento.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-6 bg-slate-50 p-5 rounded-lg border border-slate-100">
+            <p className="text-gray-700 text-center italic">
+              "A diferencia de las pólizas jurídicas tradicionales, Mica integra tecnología, agilidad y un servicio más completo. 
+              Brindamos una solución integral para que tanto propietarios como inquilinos disfruten de un proceso de arrendamiento 
+              más conveniente y seguro."
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

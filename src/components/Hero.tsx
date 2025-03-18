@@ -35,8 +35,8 @@ const Hero = () => {
 
   const features = [
     {
-      icon: <ShieldCheck className="h-5 w-5 text-mica-green" />,
-      text: "Protección jurídica completa"
+      icon: <Calendar className="h-5 w-5 text-mica-green" />,
+      text: "Investigaciones en -24hrs"
     }, 
     {
       icon: <Home className="h-5 w-5 text-mica-green" />,

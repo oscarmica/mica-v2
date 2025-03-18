@@ -1,14 +1,13 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0
+    },
     visible: {
       opacity: 1,
       transition: {
@@ -16,9 +15,11 @@ const Footer = () => {
       }
     }
   };
-  
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: {
+      y: 20,
+      opacity: 0
+    },
     visible: {
       y: 0,
       opacity: 1,
@@ -28,17 +29,12 @@ const Footer = () => {
       }
     }
   };
-  
-  return (
-    <footer className="bg-white border-t border-mica-green/10">
+  return <footer className="bg-white border-t border-mica-green/10">
       <div className="container mx-auto px-4 py-16">
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-4 gap-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <motion.div className="grid grid-cols-1 md:grid-cols-4 gap-10" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+        once: true,
+        margin: "-100px"
+      }}>
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 group">
@@ -119,13 +115,13 @@ const Footer = () => {
               <li>
                 <a href="mailto:soporte@mica.rent" className="text-mica-gray-2 hover:text-mica-green transition-colors flex items-center">
                   <Mail className="h-4 w-4 mr-2 text-mica-green" />
-                  <span>soporte@mica.rent</span>
+                  <span>hola@mica.rent</span>
                 </a>
               </li>
               <li>
                 <a href="tel:+525512345678" className="text-mica-gray-2 hover:text-mica-green transition-colors flex items-center">
                   <Phone className="h-4 w-4 mr-2 text-mica-green" />
-                  <span>+52 55 1234 5678</span>
+                  <span>+52 55 1905 9169</span>
                 </a>
               </li>
               <li className="flex">
@@ -141,13 +137,9 @@ const Footer = () => {
         </motion.div>
         
         {/* Footer Bottom */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="border-t border-mica-green/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+        once: true
+      }} className="border-t border-mica-green/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <motion.p variants={itemVariants} className="text-mica-gray-2 text-sm">
             &copy; {currentYear} mica.rent. Todos los derechos reservados.
           </motion.p>
@@ -164,8 +156,6 @@ const Footer = () => {
           </motion.div>
         </motion.div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

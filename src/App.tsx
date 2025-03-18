@@ -17,6 +17,7 @@ import SoporteLegal from "./pages/SoporteLegal";
 import DefensoriaInquilino from "./pages/DefensoriaInquilino";
 import InspeccionPropiedad from "./pages/InspeccionPropiedad";
 import Prensa from "./pages/Prensa";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/terminos" element={<Terminos />} />
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/faq" element={<FAQ />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -34,9 +34,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Inicio", href: "#" },
     { name: "Beneficios", href: "#features" },
+    { name: "Por qué mica", href: "#mica-advantages" },
     { name: "Cómo Funciona", href: "#how-it-works" },
-    { name: "Testimonios", href: "#testimonials" },
-    { name: "Contacto", href: "#contact" },
   ];
 
   return (

@@ -63,7 +63,9 @@ const Index = () => {
           
           <Hero />
           <Features />
-          <MicaAdvantages />
+          <div id="mica-advantages">
+            <MicaAdvantages />
+          </div>
           <PriceCalculator />
           <HowItWorks />
           <Testimonials />

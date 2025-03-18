@@ -86,7 +86,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center">
                 <Calendar className="mr-2 h-5 w-5 text-mica-green" />
-                <span>Resultados en 24 horas</span>
+                <span>Investigación en 24 horas</span>
               </div>
             </motion.div>
           </motion.div>

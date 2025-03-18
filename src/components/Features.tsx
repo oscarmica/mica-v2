@@ -111,7 +111,7 @@ const Features = () => {
       }
     }
   };
-  return <section id="features" className="py-20 bg-white">
+  return <section id="features" className="bg-white py-0">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">

@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Home, Calendar, Clock, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
-import { MagnetizeButton } from "@/components/ui/magnetize-button";
 import { cn } from "@/lib/utils";
-
 const Hero = () => {
   const containerVariants = {
     hidden: {
@@ -48,7 +45,6 @@ const Hero = () => {
     icon: <UserCheck className="h-5 w-5 text-mica-green" />,
     text: "Asistencia legal"
   }];
-  
   return <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
@@ -69,17 +65,6 @@ const Hero = () => {
               Tecnología, expertise legal y soluciones financieras para tus operaciones de renta.
             </motion.p>
             
-            {/* Short "What is Mica" explainer */}
-            <motion.div variants={itemVariants} className="bg-white/70 backdrop-blur-sm rounded-xl shadow-sm p-6 mb-8 max-w-3xl mx-auto">
-              <h2 className="text-xl font-semibold mb-2">¿Qué es <span className="text-mica-green">mica</span>?</h2>
-              <p className="text-mica-gray-2">
-                Mica es una plataforma que <span className="font-medium">revoluciona el arrendamiento en México</span>, 
-                ofreciendo soluciones integrales para propietarios e inquilinos. Combinamos tecnología 
-                de vanguardia con experiencia legal para proteger a ambas partes, simplificar procesos y 
-                garantizar rentas seguras sin complicaciones.
-              </p>
-            </motion.div>
-            
             {/* Feature list */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-8">
               {features.map((feature, index) => <div key={index} className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
@@ -90,10 +75,10 @@ const Hero = () => {
             
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <MagnetizeButton className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
+              <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
                 Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </MagnetizeButton>
+              </Button>
               <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">Agendar Demo</Button>
             </motion.div>
           </motion.div>

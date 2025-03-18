@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Home, Calendar, Clock, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { MagnetizeButton } from "@/components/ui/magnetize-button";
+
 const Hero = () => {
   const containerVariants = {
     hidden: {
@@ -75,10 +78,10 @@ const Hero = () => {
             
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
+              <MagnetizeButton className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
                 Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </MagnetizeButton>
               <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">Agendar Demo</Button>
             </motion.div>
           </motion.div>

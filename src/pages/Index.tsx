@@ -21,6 +21,14 @@ const Index = () => {
         const href = target.getAttribute('href');
         if (!href) return;
         
+        if (href === '#') {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+          return;
+        }
+        
         const element = document.querySelector(href);
         if (element) {
           const headerOffset = 80;
@@ -63,10 +71,10 @@ const Index = () => {
           
           <Hero />
           <Features />
-          <div id="mica-advantages">
-            <MicaAdvantages />
+          <MicaAdvantages />
+          <div id="calculator">
+            <PriceCalculator />
           </div>
-          <PriceCalculator />
           <HowItWorks />
           <Testimonials />
           <CallToAction />

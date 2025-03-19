@@ -13,6 +13,8 @@ import { Feature } from '@/components/ui/feature';
 import BenefitsSection from '@/components/BenefitsSection';
 import RentGuaranteeSection from '@/components/RentGuaranteeSection';
 import MediaSection from '@/components/MediaSection';
+import BackedBySection from '@/components/BackedBySection';
+import BlogSection from '@/components/BlogSection';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -72,17 +74,36 @@ const Index = () => {
           <div className="absolute top-40 left-20 w-64 h-64 bg-pink-200/20 rounded-full filter blur-3xl -z-10"></div>
           <div className="absolute top-80 right-20 w-72 h-72 bg-blue-200/20 rounded-full filter blur-3xl -z-10"></div>
           
+          {/* 1. Hero */}
           <Hero />
-          <RentGuaranteeSection />
+          
+          {/* 2. Que es mica? + Quien nos respalda */}
           <CombinedMicaFeatures />
+          <BackedBySection />
+          
+          {/* 3. Cobranza garantizada */}
+          <RentGuaranteeSection />
+          
+          {/* 4. Porque elegir mica? */}
           <Feature />
+          
+          {/* 5. Porque elegir mica y no polizas juridicas */}
+          <BenefitsSection />
+          
+          {/* 6. Calculadora */}
           <div id="calculator">
             <PriceCalculator />
           </div>
-          <BenefitsSection />
-          <HowItWorks />
+          
+          {/* 7. Mica en los medios */}
           <MediaSection />
+          
+          {/* 8. Lo que dicen nuestros asesores */}
           <Testimonials />
+          
+          {/* 9. Blog */}
+          <BlogSection />
+          
           <CallToAction />
         </main>
         

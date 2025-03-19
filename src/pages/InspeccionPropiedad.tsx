@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
+import NavHeader from '@/components/ui/nav-header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,7 +10,7 @@ import { Search } from 'lucide-react';
 const InspeccionPropiedad = () => {
   return (
     <>
-      <Navbar />
+      <NavHeader />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <motion.div

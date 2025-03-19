@@ -46,7 +46,7 @@ function NavHeader() {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="relative z-10 bg-mica-green text-white rounded-lg px-5 py-2 text-sm font-medium"
+        className="relative z-10 bg-mica-green hover:bg-mica-green/90 text-white rounded-lg px-5 py-2 text-sm font-medium"
       >
         Inicia sesión
       </motion.button>

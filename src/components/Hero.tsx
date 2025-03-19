@@ -97,7 +97,7 @@ const Hero = () => {
             <motion.h1 variants={itemVariants} className="font-bold mb-6 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Tu renta <span className="text-mica-green flex justify-center">
                 <TextRotate 
-                  texts={["simple", "segura", "digital", "garantizada", "con o sin aval"]} 
+                  texts={["simple", "segura", "digital", "puntual", "protegida", "con o sin aval"]} 
                   rotationInterval={3000}
                   staggerDuration={0.05}
                   staggerFrom="first"

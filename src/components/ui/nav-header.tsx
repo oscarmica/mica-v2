@@ -24,7 +24,7 @@ function NavHeader() {
     <div className="container fixed top-0 left-0 right-0 z-50 flex items-center justify-between py-4 px-4 mx-auto">
       <Link to="/" className="flex items-center z-10">
         <img 
-          src="/public/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png" 
+          src="/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png" 
           alt="Mica Logo" 
           className="h-8"
         />
@@ -46,7 +46,7 @@ function NavHeader() {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="relative z-10 bg-mica-green hover:bg-mica-green/90 text-white rounded-lg px-5 py-2 text-sm font-medium"
+        className="relative z-10 bg-mica-green text-white rounded-lg px-5 py-2 text-sm font-medium"
       >
         Inicia sesión
       </motion.button>

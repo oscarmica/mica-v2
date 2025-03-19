@@ -50,16 +50,19 @@ const PriceCalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-mica-green/10 text-mica-green rounded-full text-sm font-medium mb-4">
-            Calcula tu protección
+            Calculadora de protección
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            ¿Cuánto cuesta <span className="text-mica-green">proteger tu propiedad?</span>
+          <h2 className="text-3xl sm:text-5xl font-bold mb-6 relative inline-block">
+            <span className="relative z-10">Descubre tu plan ideal</span>
+            <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
+              <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
+            </svg>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Selecciona el precio de renta y elige entre los 3 productos que tenemos para ti
+            Personaliza tu protección según tus necesidades y descubre cuánto cuesta proteger tu propiedad
           </p>
         </motion.div>
 
@@ -68,12 +71,18 @@ const PriceCalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-slate-100"
+          className="bg-gradient-to-br from-white to-slate-50 rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100 relative overflow-hidden"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          {/* Decorative elements */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-mica-green/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-mica-pink-baby/10 rounded-full blur-3xl"></div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 relative">
             <div className="lg:col-span-3">
-              <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
-              <PaymentToggle isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
+              <div className="max-w-2xl mx-auto">
+                <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
+                <PaymentToggle isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
+              </div>
             </div>
             
             <div className="lg:col-span-3">
@@ -88,7 +97,7 @@ const PriceCalculator = () => {
             </div>
           </div>
 
-          <div className="text-xs text-gray-500 mt-6 text-center">
+          <div className="text-xs text-gray-500 mt-8 text-center">
             *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
           </div>
         </motion.div>

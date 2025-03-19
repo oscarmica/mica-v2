@@ -76,6 +76,11 @@ const Logos3 = ({
     },
   ],
 }: Logos3Props) => {
+  // Crear el plugin de AutoScroll
+  const plugin = React.useMemo(() => {
+    return AutoScroll({ playOnInit: true });
+  }, []);
+
   return (
     <section className="py-32">
       <div className="container flex flex-col items-center text-center">
@@ -85,10 +90,7 @@ const Logos3 = ({
       </div>
       <div className="pt-10 md:pt-16 lg:pt-20">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
-          <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true })]}
-          >
+          <Carousel opts={{ loop: true }} plugins={[plugin]}>
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
                 <CarouselItem

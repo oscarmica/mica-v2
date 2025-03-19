@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import RentInput from './RentInput';
@@ -6,6 +7,7 @@ import PlanCardGrid from './PlanCardGrid';
 import BenefitsSection from './BenefitsSection';
 import { protectionPlans } from './types';
 import { formatCurrency } from './PriceCalculatorUtils';
+
 const PriceCalculator = () => {
   const [rentAmount, setRentAmount] = useState<number>(10000);
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
@@ -34,6 +36,7 @@ const PriceCalculator = () => {
     });
     setPrices(calculatedPrices);
   }, [rentAmount, isMonthly]);
+
   return <section id="calculator" className="py-16 bg-slate-50 md:py-[50px]">
       <div className="container px-4 mx-auto max-w-5xl">
         <div className="text-center mb-10">
@@ -41,7 +44,7 @@ const PriceCalculator = () => {
             Calcula el <span className="text-mica-green">precio de protección</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Selecciona el precio de renta y tipo de plan que mejor se adapte a tus necesidades.
+            Selecciona el precio de renta y elige entre los 3 productos que tenemos para ti
           </p>
         </div>
 
@@ -69,4 +72,5 @@ const PriceCalculator = () => {
       </div>
     </section>;
 };
+
 export default PriceCalculator;

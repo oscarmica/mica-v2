@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -169,9 +168,7 @@ const CombinedMicaFeatures = () => {
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
               ¿Qué es <span className="text-primary">mica</span>?
             </h2>
-            <p className="text-muted-foreground text-lg">
-              Creamos la mejor protección para el arrendamiento en México.
-            </p>
+            <p className="text-muted-foreground text-lg">Creamos la mejor protección de renta en México.</p>
           </div>
           
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{

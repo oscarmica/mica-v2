@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -12,72 +11,66 @@ const UserBenefits = ({
   type: 'propietarios' | 'inquilinos' | 'asesores';
 }) => {
   const benefitsData = {
-    propietarios: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Investigación detallada de inquilinos'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Prevención de extinción de dominio'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Cobro de renta mensual incluido'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Pago de renta puntual'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Recuperación y desalojo en tiempo record gestionado por Mica'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Protección de rentas caídas'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Opción de adelantar rentas'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Seguro contra daños'
-      }
-    ],
-    inquilinos: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Renta con o sin aval'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Resultado de investigación max. 24hrs'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Proceso 100% digital y sencillo'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Contrato de arrendamiento justo'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Posibilidad de diferir depósito o costos de mudanza**'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Usa los pagos para mejorar tu historial crediticio mes con mes'
-      }
-    ],
-    asesores: [
-      {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Cierra operaciones más rápido'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Investigación y contrato en 24hrs'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Extraordinarias comisiones'
-      }, {
-        icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-        text: 'Servicio seguro y ágil'
-      }
-    ]
+    propietarios: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Investigación detallada de inquilinos'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Prevención de extinción de dominio'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Cobro de renta mensual incluido'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Pago de renta puntual'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Recuperación y desalojo en tiempo record gestionado por Mica'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Protección de rentas caídas'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Opción de adelantar rentas'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Seguro contra daños'
+    }],
+    inquilinos: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Renta con o sin aval'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Resultado de investigación max. 24hrs'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Proceso 100% digital y sencillo'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Contrato de arrendamiento justo'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Posibilidad de diferir depósito o costos de mudanza**'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Usa los pagos para mejorar tu historial crediticio mes con mes'
+    }],
+    asesores: [{
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Cierra operaciones más rápido'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Investigación y contrato en 24hrs'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Extraordinarias comisiones'
+    }, {
+      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
+      text: 'Servicio seguro y ágil'
+    }]
   };
   const benefits = benefitsData[type];
   return <ul className="space-y-4">
@@ -92,7 +85,6 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
-
 const CombinedMicaFeatures = () => {
   // Animation variants
   const containerVariants = {
@@ -120,25 +112,25 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
-
-  return (
-    <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+  return <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
       <div className="absolute bottom-40 right-0 w-96 h-96 bg-pink-200/10 rounded-full filter blur-3xl -z-10"></div>
       <div className="absolute top-40 left-10 w-96 h-96 bg-blue-200/10 rounded-full filter blur-3xl -z-10"></div>
       
       <div className="container px-4 mx-auto max-w-7xl relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="inline-block px-3 py-1 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium mb-2">
-            Conoce nuestros productos
-          </span>
+        <motion.div initial={{
+        opacity: 0,
+        y: 30
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }} className="text-center max-w-3xl mx-auto mb-16">
+          
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative inline-block">
             <span className="relative z-10">¿Qué es <span className="text-mica-green">mica</span>?</span>
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
@@ -150,18 +142,12 @@ const CombinedMicaFeatures = () => {
           </p>
         </motion.div>
         
-        <motion.div 
-          variants={containerVariants} 
-          initial="hidden" 
-          whileInView="visible" 
-          viewport={{once: true, margin: "-100px"}} 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+        once: true,
+        margin: "-100px"
+      }} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {/* Asesores - ahora primero */}
-          <motion.div 
-            variants={itemVariants} 
-            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">
               <div className="p-2.5 bg-blue-100 rounded-xl w-fit mb-4">
@@ -174,10 +160,7 @@ const CombinedMicaFeatures = () => {
           </motion.div>
           
           {/* Propietarios - ahora segundo */}
-          <motion.div 
-            variants={itemVariants} 
-            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-green-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">
               <div className="p-2.5 bg-green-100 rounded-xl w-fit mb-4">
@@ -190,10 +173,7 @@ const CombinedMicaFeatures = () => {
           </motion.div>
           
           {/* Inquilinos - ahora tercero */}
-          <motion.div 
-            variants={itemVariants} 
-            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
-          >
+          <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-amber-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">
               <div className="p-2.5 bg-amber-100 rounded-xl w-fit mb-4">
@@ -206,20 +186,23 @@ const CombinedMicaFeatures = () => {
           </motion.div>
         </motion.div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16 bg-gradient-to-r from-mica-green/20 to-blue-100/30 p-6 rounded-2xl max-w-3xl mx-auto shadow-sm"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6,
+        delay: 0.4
+      }} className="text-center mt-16 bg-gradient-to-r from-mica-green/20 to-blue-100/30 p-6 rounded-2xl max-w-3xl mx-auto shadow-sm">
           <p className="text-xl font-medium">
             Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong className="text-mica-green">renta más segura, ágil y conveniente</strong>.
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CombinedMicaFeatures;

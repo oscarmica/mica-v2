@@ -72,11 +72,11 @@ const Index = () => {
           
           <Hero />
           <CombinedMicaFeatures />
-          <BenefitsSection />
           <Feature />
           <div id="calculator">
             <PriceCalculator />
           </div>
+          <BenefitsSection />
           <HowItWorks />
           <Testimonials />
           <CallToAction />

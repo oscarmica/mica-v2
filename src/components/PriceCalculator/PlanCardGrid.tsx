@@ -40,7 +40,7 @@ const PlanCardGrid: React.FC<PlanCardGridProps> = ({
         ))}
       </div>
       
-      <div className="text-xs sm:text-sm text-gray-500 mt-3 pt-2 text-center bg-slate-50 p-2 rounded-lg border border-slate-100">
+      <div className="text-sm sm:text-base text-gray-600 mt-4 py-2 px-4 text-center bg-slate-50 p-2 rounded-lg border border-slate-100 shadow-sm">
         *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
       </div>
     </div>

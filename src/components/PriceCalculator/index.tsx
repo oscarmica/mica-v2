@@ -56,7 +56,7 @@ const PriceCalculator = () => {
             Calculadora de protección
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 relative inline-block">
-            <span className="relative z-10">Descubre tu plan ideal</span>
+            <span className="relative z-10">Elige entre 3 productos de protección</span>
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
             </svg>

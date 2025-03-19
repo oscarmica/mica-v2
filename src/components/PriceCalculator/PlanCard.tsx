@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Check, ShieldCheck, ChevronDown, ChevronUp } from "lucide-react";
+import { Check, ShieldCheck, ChevronDown, ChevronUp, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ProtectionPlan } from './types';
@@ -35,6 +35,9 @@ const PlanCard: React.FC<PlanCardProps> = ({
   const visibleFeatures = expanded ? plan.features : plan.features.slice(0, 3);
   const hasMoreFeatures = plan.features.length > 3;
 
+  // Get protection months
+  const protectionMonths = plan.id === "juridica" ? "Jurídica" : plan.id === "integral" ? "4 meses" : "12 meses";
+
   return (
     <motion.div 
       className={cn(
@@ -56,9 +59,17 @@ const PlanCard: React.FC<PlanCardProps> = ({
         <h3 className="font-bold text-base">{plan.title}</h3>
       </div>
       
-      {!compact && (
-        <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
-      )}
+      {/* Protection duration badge */}
+      <div className={cn("flex items-center mb-2 text-xs font-medium px-2 py-1 rounded-md w-fit", 
+        plan.id === "juridica" 
+          ? "bg-blue-100 text-blue-700" 
+          : plan.id === "integral" 
+            ? "bg-green-100 text-green-700" 
+            : "bg-amber-100 text-amber-700"
+      )}>
+        <Calendar className="h-3 w-3 mr-1 inline-block" />
+        <span>{plan.id === "juridica" ? "Protección Jurídica" : `Protección ${protectionMonths}`}</span>
+      </div>
       
       <div className="mb-3">
         <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-end">

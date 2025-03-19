@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -121,49 +122,101 @@ const CombinedMicaFeatures = () => {
   };
 
   return (
-    <section id="features" className="bg-white py-0">
-      <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+    <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
+      <div className="absolute bottom-40 right-0 w-96 h-96 bg-pink-200/10 rounded-full filter blur-3xl -z-10"></div>
+      <div className="absolute top-40 left-10 w-96 h-96 bg-blue-200/10 rounded-full filter blur-3xl -z-10"></div>
+      
+      <div className="container px-4 mx-auto max-w-7xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <span className="inline-block px-3 py-1 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium mb-2">
             Conoce nuestros productos
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            ¿Qué es <span className="text-primary">mica</span>?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative inline-block">
+            <span className="relative z-10">¿Qué es <span className="text-mica-green">mica</span>?</span>
+            <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
+              <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
+            </svg>
           </h2>
-          <p className="text-muted-foreground text-lg">Creamos la mejor protección de renta en México.</p>
-        </div>
+          <p className="text-lg md:text-xl text-gray-600 mt-4">
+            Creamos la <span className="font-semibold">mejor protección de renta</span> en México
+          </p>
+        </motion.div>
         
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
-        once: true,
-        margin: "-100px"
-      }} className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
+        <motion.div 
+          variants={containerVariants} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{once: true, margin: "-100px"}} 
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+        >
           {/* Asesores - ahora primero */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
-            <p className="text-gray-600 mb-6">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
-            <UserBenefits type="asesores" />
+          <motion.div 
+            variants={itemVariants} 
+            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
+            <div className="relative z-10">
+              <div className="p-2.5 bg-blue-100 rounded-xl w-fit mb-4">
+                <Home className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
+              <p className="text-gray-600 mb-6 text-sm md:text-base">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
+              <UserBenefits type="asesores" />
+            </div>
           </motion.div>
           
           {/* Propietarios - ahora segundo */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold mb-4">Propietarios</h3>
-            <p className="text-gray-600 mb-6">Protege tu patrimonio y deja el cobro de renta en nuestras manos</p>
-            <UserBenefits type="propietarios" />
+          <motion.div 
+            variants={itemVariants} 
+            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-green-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
+            <div className="relative z-10">
+              <div className="p-2.5 bg-green-100 rounded-xl w-fit mb-4">
+                <Building className="h-6 w-6 text-mica-green" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Propietarios</h3>
+              <p className="text-gray-600 mb-6 text-sm md:text-base">Protege tu patrimonio y deja el cobro de renta en nuestras manos</p>
+              <UserBenefits type="propietarios" />
+            </div>
           </motion.div>
           
           {/* Inquilinos - ahora tercero */}
-          <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-            <h3 className="text-2xl font-bold mb-4">Inquilinos</h3>
-            <p className="text-gray-600 mb-6">Renta inmuebles con o sin necesidad de aval o depósitos extra.</p>
-            <UserBenefits type="inquilinos" />
+          <motion.div 
+            variants={itemVariants} 
+            className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 bg-amber-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
+            <div className="relative z-10">
+              <div className="p-2.5 bg-amber-100 rounded-xl w-fit mb-4">
+                <Users className="h-6 w-6 text-amber-600" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Inquilinos</h3>
+              <p className="text-gray-600 mb-6 text-sm md:text-base">Renta inmuebles con o sin necesidad de aval o depósitos extra.</p>
+              <UserBenefits type="inquilinos" />
+            </div>
           </motion.div>
         </motion.div>
         
-        <div className="text-center mt-12">
-          <p className="text-lg">
-            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong>renta más segura, ágil y conveniente</strong>.
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-16 bg-gradient-to-r from-mica-green/20 to-blue-100/30 p-6 rounded-2xl max-w-3xl mx-auto shadow-sm"
+        >
+          <p className="text-xl font-medium">
+            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong className="text-mica-green">renta más segura, ágil y conveniente</strong>.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

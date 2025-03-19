@@ -37,40 +37,74 @@ const PriceCalculator = () => {
     setPrices(calculatedPrices);
   }, [rentAmount, isMonthly]);
 
-  return <section id="calculator" className="py-16 bg-slate-50 md:py-[50px]">
-      <div className="container px-4 mx-auto max-w-5xl">
-        <div className="text-center mb-10">
+  return (
+    <section id="calculator" className="py-24 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
+      <div className="absolute bottom-20 right-0 w-64 h-64 bg-pink-200/20 rounded-full filter blur-3xl -z-10"></div>
+      <div className="absolute top-40 left-10 w-72 h-72 bg-blue-200/20 rounded-full filter blur-3xl -z-10"></div>
+      
+      <div className="container px-4 mx-auto max-w-6xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block px-4 py-1.5 bg-mica-green/10 text-mica-green rounded-full text-sm font-medium mb-4">
+            Calcula tu protección
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Calcula el <span className="text-mica-green">precio de protección</span>
+            ¿Cuánto cuesta <span className="text-mica-green">proteger tu propiedad?</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Selecciona el precio de renta y elige entre los 3 productos que tenemos para ti
           </p>
-        </div>
+        </motion.div>
 
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="bg-white rounded-xl shadow-md p-6 md:p-8">
-          <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
-          <PaymentToggle isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
-          <PlanCardGrid protectionPlans={protectionPlans} prices={prices} isMonthly={isMonthly} hoveredPlan={hoveredPlan} setHoveredPlan={setHoveredPlan} formatCurrency={formatCurrency} />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-slate-100"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div className="lg:col-span-3">
+              <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
+              <PaymentToggle isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
+            </div>
+            
+            <div className="lg:col-span-3">
+              <PlanCardGrid 
+                protectionPlans={protectionPlans} 
+                prices={prices} 
+                isMonthly={isMonthly} 
+                hoveredPlan={hoveredPlan} 
+                setHoveredPlan={setHoveredPlan} 
+                formatCurrency={formatCurrency} 
+              />
+            </div>
+          </div>
 
           <div className="text-xs text-gray-500 mt-6 text-center">
             *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
           </div>
         </motion.div>
 
-        <BenefitsSection />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-16"
+        >
+          <BenefitsSection />
+        </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default PriceCalculator;

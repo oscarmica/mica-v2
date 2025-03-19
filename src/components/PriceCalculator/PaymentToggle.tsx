@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { motion } from "framer-motion";
 
 interface PaymentToggleProps {
   isMonthly: boolean;
@@ -9,24 +10,31 @@ interface PaymentToggleProps {
 
 const PaymentToggle: React.FC<PaymentToggleProps> = ({ isMonthly, setIsMonthly }) => {
   return (
-    <div className="flex justify-center mb-8">
-      <ToggleGroup type="single" defaultValue="monthly" className="border rounded-full">
-        <ToggleGroupItem 
-          value="monthly" 
-          className={`rounded-l-full px-6 py-2 ${isMonthly ? 'bg-mica-green text-white' : ''}`}
-          onClick={() => setIsMonthly(true)}
-        >
-          Mensual
-        </ToggleGroupItem>
-        <ToggleGroupItem 
-          value="yearly" 
-          className={`rounded-r-full px-6 py-2 ${!isMonthly ? 'bg-mica-green text-white' : ''}`}
-          onClick={() => setIsMonthly(false)}
-        >
-          Anual
-        </ToggleGroupItem>
-      </ToggleGroup>
-    </div>
+    <motion.div 
+      className="flex justify-center mb-10"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
+    >
+      <div className="bg-slate-100 p-1 rounded-full">
+        <ToggleGroup type="single" defaultValue="monthly" className="border-none">
+          <ToggleGroupItem 
+            value="monthly" 
+            className={`rounded-full px-8 py-2.5 text-sm font-medium ${isMonthly ? 'bg-white text-mica-green shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+            onClick={() => setIsMonthly(true)}
+          >
+            Mensual
+          </ToggleGroupItem>
+          <ToggleGroupItem 
+            value="yearly" 
+            className={`rounded-full px-8 py-2.5 text-sm font-medium ${!isMonthly ? 'bg-white text-mica-green shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
+            onClick={() => setIsMonthly(false)}
+          >
+            Anual
+          </ToggleGroupItem>
+        </ToggleGroup>
+      </div>
+    </motion.div>
   );
 };
 

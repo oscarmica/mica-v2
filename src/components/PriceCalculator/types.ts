@@ -14,6 +14,7 @@ export interface ProtectionPlan {
     yearly: number;
   };
   color: string;
+  bgColor: string;
   iconColor: string;
 }
 
@@ -40,6 +41,7 @@ export const protectionPlans: ProtectionPlan[] = [
       yearly: 0.20 // 20% del monto de renta mensual
     },
     color: "bg-blue-50 border-blue-200",
+    bgColor: "bg-blue-100", 
     iconColor: "text-blue-500"
   },
   {
@@ -64,6 +66,7 @@ export const protectionPlans: ProtectionPlan[] = [
       yearly: 0.30 // 30% del monto de renta mensual
     },
     color: "bg-green-50 border-green-200",
+    bgColor: "bg-green-100",
     iconColor: "text-mica-green"
   },
   {
@@ -88,6 +91,7 @@ export const protectionPlans: ProtectionPlan[] = [
       yearly: 0.50 // 50% del monto de renta mensual
     },
     color: "bg-amber-50 border-amber-200",
+    bgColor: "bg-amber-100",
     iconColor: "text-amber-500"
   }
 ];

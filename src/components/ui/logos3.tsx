@@ -76,10 +76,8 @@ const Logos3 = ({
     },
   ],
 }: Logos3Props) => {
-  // Crear el plugin de AutoScroll
-  const plugin = React.useMemo(() => {
-    return AutoScroll({ playOnInit: true });
-  }, []);
+  // Create AutoScroll plugin
+  const plugin = React.useMemo(() => AutoScroll({ playOnInit: true }), []);
 
   return (
     <section className="py-32">

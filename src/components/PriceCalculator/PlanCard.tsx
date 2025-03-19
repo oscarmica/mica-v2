@@ -35,8 +35,8 @@ const PlanCard: React.FC<PlanCardProps> = ({
   const visibleFeatures = expanded ? plan.features : plan.features.slice(0, 3);
   const hasMoreFeatures = plan.features.length > 3;
 
-  // Get protection months
-  const protectionMonths = plan.id === "juridica" ? "Jurídica" : plan.id === "integral" ? "4 meses" : "12 meses";
+  // Get payment guarantee months
+  const protectionDetails = plan.id === "juridica" ? "Jurídica" : plan.id === "integral" ? "Pagamos hasta 4 meses de impago" : "Pagamos hasta 12 meses de impago";
 
   return (
     <motion.div 
@@ -59,7 +59,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
         <h3 className="font-bold text-base">{plan.title}</h3>
       </div>
       
-      {/* Protection duration badge */}
+      {/* Protection guarantee badge */}
       <div className={cn("flex items-center mb-2 text-xs font-medium px-2 py-1 rounded-md w-fit", 
         plan.id === "juridica" 
           ? "bg-blue-100 text-blue-700" 
@@ -68,7 +68,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             : "bg-amber-100 text-amber-700"
       )}>
         <Calendar className="h-3 w-3 mr-1 inline-block" />
-        <span>{plan.id === "juridica" ? "Protección Jurídica" : `Protección ${protectionMonths}`}</span>
+        <span>{protectionDetails}</span>
       </div>
       
       <div className="mb-3">

@@ -11,6 +11,8 @@ import Footer from '@/components/Footer';
 import CombinedMicaFeatures from '@/components/CombinedMicaFeatures';
 import { Feature } from '@/components/ui/feature';
 import BenefitsSection from '@/components/BenefitsSection';
+import RentGuaranteeSection from '@/components/RentGuaranteeSection';
+import MediaSection from '@/components/MediaSection';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -71,6 +73,7 @@ const Index = () => {
           <div className="absolute top-80 right-20 w-72 h-72 bg-blue-200/20 rounded-full filter blur-3xl -z-10"></div>
           
           <Hero />
+          <RentGuaranteeSection />
           <CombinedMicaFeatures />
           <Feature />
           <div id="calculator">
@@ -78,6 +81,7 @@ const Index = () => {
           </div>
           <BenefitsSection />
           <HowItWorks />
+          <MediaSection />
           <Testimonials />
           <CallToAction />
         </main>

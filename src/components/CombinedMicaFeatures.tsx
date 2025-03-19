@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -136,11 +137,11 @@ const CombinedMicaFeatures = () => {
   }, {
     icon: <Shield className="h-12 w-12 p-2 text-mica-green" />,
     title: "Cobertura",
-    description: "Hasta 15 meses de protección contra impago"
+    description: "Hasta 12 meses de protección contra impago"
   }, {
     icon: <HeartHandshake className="h-12 w-12 p-2 text-mica-green" />,
     title: "Servicio",
-    description: "Acompañamiento desde la firma hasta la conclusión"
+    description: "Acompañamiento desde la investigación hasta la cobranza"
   }];
 
   // Diferencias entre Mica y pólizas jurídicas tradicionales
@@ -151,7 +152,7 @@ const CombinedMicaFeatures = () => {
     mica: "Verificación de inquilinos en 24 horas",
     traditional: "Esperas de semanas para verificaciones"
   }, {
-    mica: "Hasta 15 meses de protección",
+    mica: "Hasta 12 meses de protección",
     traditional: "Coberturas limitadas y restrictivas"
   }, {
     mica: "Soporte constante durante el contrato",
@@ -166,7 +167,7 @@ const CombinedMicaFeatures = () => {
               Conoce nuestros productos
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              ¿Qué es <span className="text-primary">Mica</span>?
+              ¿Qué es <span className="text-primary">mica</span>?
             </h2>
             <p className="text-muted-foreground text-lg">
               Creamos la mejor protección para el arrendamiento en México.
@@ -177,25 +178,25 @@ const CombinedMicaFeatures = () => {
           once: true,
           margin: "-100px"
         }} className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
-            {/* Propietarios */}
+            {/* Asesores - ahora primero */}
+            <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+              <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
+              <p className="text-gray-600 mb-6">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
+              <UserBenefits type="asesores" />
+            </motion.div>
+            
+            {/* Propietarios - ahora segundo */}
             <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
               <h3 className="text-2xl font-bold mb-4">Propietarios</h3>
               <p className="text-gray-600 mb-6">Protege tu patrimonio y deja el cobro de renta en nuestras manos</p>
               <UserBenefits type="propietarios" />
             </motion.div>
             
-            {/* Inquilinos */}
+            {/* Inquilinos - ahora tercero */}
             <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
               <h3 className="text-2xl font-bold mb-4">Inquilinos</h3>
               <p className="text-gray-600 mb-6">Renta inmuebles con o sin necesidad de aval o depósitos extra.</p>
               <UserBenefits type="inquilinos" />
-            </motion.div>
-            
-            {/* Asesores */}
-            <motion.div variants={itemVariants} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-              <h3 className="text-2xl font-bold mb-4">Asesor Inmobiliario</h3>
-              <p className="text-gray-600 mb-6">Ofrece seguridad para tus clientes mientras creces tu portafolio</p>
-              <UserBenefits type="asesores" />
             </motion.div>
           </motion.div>
           

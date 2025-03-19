@@ -1,5 +1,5 @@
 
-import { User, Shield, FileSignature, CreditCard, Clock, Search, MousePointerClick, CreditCard as CreditCardIcon } from "lucide-react";
+import { User, Shield, FileSignature, CreditCard, Clock, Search, MousePointerClick, CreditCard as CreditCardIcon, Building, Star, HeartHandshake, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -49,22 +49,23 @@ function Feature() {
           </motion.div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left side - Image or feature showcase */}
+            {/* Left side - Testimonial showcase */}
             <motion.div 
               variants={itemVariants}
-              className="hidden lg:flex items-center justify-center bg-gradient-to-br from-mica-green/20 to-mica-green/5 rounded-2xl p-8 relative overflow-hidden"
+              className="flex items-center justify-center bg-gradient-to-br from-mica-green/20 to-mica-green/5 rounded-2xl p-8 relative overflow-hidden"
             >
               <div className="absolute bottom-10 left-10 bg-gradient-to-br from-mica-green/80 to-purple-600/90 p-6 rounded-xl max-w-xs text-white shadow-lg">
                 <div className="text-2xl mb-1 font-serif">"</div>
                 <p className="text-xl font-medium mb-4">
-                  mica es un increíble aliado para propietarios e inquilinos.
+                  Me gusta que todo el proceso es digital, muy rápido y no se necesita presencia física de las partes en ningún momento.
                 </p>
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
-                    <span className="text-lg">👤</span>
+                    <span className="text-lg">👨‍💼</span>
                   </div>
                   <div>
-                    <p className="font-semibold">Carlos Ruiz</p>
+                    <p className="font-semibold">Rodolfo Navarro</p>
+                    <p className="text-sm text-white/80">Asesor Inmobiliario en H Cinco</p>
                     <div className="flex">
                       {"★★★★★".split("").map((star, i) => (
                         <span key={i} className="text-yellow-400">{star}</span>
@@ -86,12 +87,12 @@ function Feature() {
               >
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
-                    <Search className="w-8 h-8 stroke-1 text-mica-green" />
+                    <Zap className="w-8 h-8 stroke-1 text-mica-green" />
                   </div>
                   <div>
-                    <h3 className="text-xl tracking-tight font-semibold mb-2">Protección completa</h3>
+                    <h3 className="text-xl tracking-tight font-semibold mb-2">Proceso 100% digital</h3>
                     <p className="text-gray-300 text-base">
-                      Ofrecemos hasta 15 meses de protección contra impago, superando ampliamente las coberturas tradicionales.
+                      Firma de contratos digital sin necesidad de reuniones presenciales o papeleos innecesarios.
                     </p>
                   </div>
                 </div>
@@ -103,7 +104,7 @@ function Feature() {
               >
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
-                    <MousePointerClick className="w-8 h-8 stroke-1 text-mica-green" />
+                    <Clock className="w-8 h-8 stroke-1 text-mica-green" />
                   </div>
                   <div>
                     <h3 className="text-xl tracking-tight font-semibold mb-2">Respuesta rápida</h3>
@@ -120,12 +121,12 @@ function Feature() {
               >
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
-                    <FileSignature className="w-8 h-8 stroke-1 text-mica-green" />
+                    <Shield className="w-8 h-8 stroke-1 text-mica-green" />
                   </div>
                   <div>
-                    <h3 className="text-xl tracking-tight font-semibold mb-2">Proceso digitalizado</h3>
+                    <h3 className="text-xl tracking-tight font-semibold mb-2">Protección completa</h3>
                     <p className="text-gray-300 text-base">
-                      Firma de contratos 100% digital sin necesidad de reuniones presenciales o papeleos innecesarios.
+                      Ofrecemos hasta 12 meses de protección contra impago, superando ampliamente las coberturas tradicionales.
                     </p>
                   </div>
                 </div>
@@ -137,12 +138,12 @@ function Feature() {
               >
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
-                    <CreditCardIcon className="w-8 h-8 stroke-1 text-mica-green" />
+                    <HeartHandshake className="w-8 h-8 stroke-1 text-mica-green" />
                   </div>
                   <div>
-                    <h3 className="text-xl tracking-tight font-semibold mb-2">Cobro garantizado</h3>
+                    <h3 className="text-xl tracking-tight font-semibold mb-2">Soporte constante</h3>
                     <p className="text-gray-300 text-base">
-                      Mica garantiza el pago puntual al propietario, independientemente de si el inquilino paga a tiempo o no.
+                      No desaparecemos después de firmar. Nuestro equipo te acompaña durante toda la relación de arrendamiento.
                     </p>
                   </div>
                 </div>

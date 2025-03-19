@@ -2,6 +2,7 @@
 import React from 'react';
 import PlanCard from './PlanCard';
 import { ProtectionPlan } from './types';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PlanCardGridProps {
   protectionPlans: ProtectionPlan[];
@@ -20,8 +21,10 @@ const PlanCardGrid: React.FC<PlanCardGridProps> = ({
   setHoveredPlan,
   formatCurrency
 }) => {
+  const isMobile = useIsMobile();
+  
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 h-full">
       {protectionPlans.map((plan) => (
         <PlanCard
           key={plan.id}

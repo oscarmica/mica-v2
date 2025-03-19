@@ -38,7 +38,7 @@ const PriceCalculator = () => {
   }, [rentAmount, isMonthly]);
 
   return (
-    <section id="calculator" className="py-12 md:py-16 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
+    <section id="calculator" className="py-10 md:py-14 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
       <div className="absolute bottom-20 right-0 w-64 h-64 bg-pink-200/20 rounded-full filter blur-3xl -z-10"></div>
@@ -50,12 +50,12 @@ const PriceCalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6 md:mb-8"
+          className="text-center mb-4 md:mb-6"
         >
-          <span className="inline-block px-4 py-1 bg-mica-green/10 text-mica-green rounded-full text-sm font-medium mb-2">
+          <span className="inline-block px-3 py-1 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium mb-2">
             Calculadora de protección
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 relative inline-block">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 relative inline-block">
             <span className="relative z-10">Descubre tu plan ideal</span>
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
@@ -71,13 +71,13 @@ const PriceCalculator = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="bg-gradient-to-br from-white to-slate-50 rounded-3xl shadow-xl p-4 md:p-6 border border-slate-100 relative overflow-hidden"
+          className="bg-gradient-to-br from-white to-slate-50 rounded-3xl shadow-xl p-3 sm:p-4 md:p-5 border border-slate-100 relative overflow-hidden"
         >
           {/* Decorative elements */}
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-mica-green/5 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-mica-pink-baby/10 rounded-full blur-3xl"></div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 md:gap-4 relative">
             <div className="lg:col-span-4">
               <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
               <PaymentToggle isMonthly={isMonthly} setIsMonthly={setIsMonthly} />
@@ -93,7 +93,7 @@ const PriceCalculator = () => {
                 formatCurrency={formatCurrency} 
               />
               
-              <div className="text-xs text-gray-500 mt-4 text-center">
+              <div className="text-xs text-gray-500 mt-3 text-center">
                 *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
               </div>
             </div>

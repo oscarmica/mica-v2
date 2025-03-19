@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Check, ShieldCheck } from "lucide-react";
+import React, { useState } from 'react';
+import { Check, ShieldCheck, ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ProtectionPlan } from './types';
@@ -24,6 +24,17 @@ const PlanCard: React.FC<PlanCardProps> = ({
   formatCurrency,
   compact = false
 }) => {
+  const [expanded, setExpanded] = useState(false);
+  
+  const toggleExpanded = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering hover effect
+    setExpanded(prev => !prev);
+  };
+  
+  // Determine how many features to show initially
+  const visibleFeatures = expanded ? plan.features : plan.features.slice(0, 3);
+  const hasMoreFeatures = plan.features.length > 3;
+
   return (
     <motion.div 
       className={cn(
@@ -50,7 +61,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
       )}
       
       <div className="mb-3">
-        <div className="text-2xl font-bold text-gray-900 flex items-end">
+        <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-end">
           {formatCurrency(price)}
           <span className="text-xs text-gray-500 ml-1 mb-1">
             {isMonthly ? '/mes' : '/año'}
@@ -60,16 +71,36 @@ const PlanCard: React.FC<PlanCardProps> = ({
       
       <div className="border-t border-gray-200 pt-2 mt-auto">
         <ul className="space-y-1.5">
-          {plan.features.slice(0, compact ? 3 : plan.features.length).map((feature, index) => (
-            <li key={index} className="flex items-start text-xs">
+          {visibleFeatures.map((feature, index) => (
+            <li key={index} className="flex items-start text-xs sm:text-sm">
               <Check className={cn("mr-1 h-3.5 w-3.5 flex-shrink-0 mt-0.5", plan.iconColor)} />
-              <span>{feature}</span>
+              <span className="text-balance">{feature}</span>
             </li>
           ))}
-          {compact && plan.features.length > 3 && (
-            <li className="text-xs text-mica-green text-center mt-1">+ {plan.features.length - 3} beneficios más</li>
-          )}
         </ul>
+        
+        {compact && hasMoreFeatures && (
+          <button 
+            onClick={toggleExpanded}
+            className={cn(
+              "w-full mt-1.5 flex items-center justify-center text-xs font-medium gap-1 py-1 rounded-md transition-colors",
+              plan.iconColor,
+              "hover:bg-gray-100/70"
+            )}
+          >
+            {expanded ? (
+              <>
+                <ChevronUp className="h-3 w-3" />
+                <span>Mostrar menos</span>
+              </>
+            ) : (
+              <>
+                <span>+ {plan.features.length - 3} beneficios más</span>
+                <ChevronDown className="h-3 w-3" />
+              </>
+            )}
+          </button>
+        )}
       </div>
 
       {plan.id === "integral" && (

@@ -21,7 +21,7 @@ const PlanCardGrid: React.FC<PlanCardGridProps> = ({
   formatCurrency
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 h-full">
       {protectionPlans.map((plan) => (
         <PlanCard
           key={plan.id}
@@ -31,6 +31,7 @@ const PlanCardGrid: React.FC<PlanCardGridProps> = ({
           hoveredPlan={hoveredPlan}
           setHoveredPlan={setHoveredPlan}
           formatCurrency={formatCurrency}
+          compact={true}
         />
       ))}
     </div>

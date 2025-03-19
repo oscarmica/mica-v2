@@ -1,12 +1,14 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Clock, Award, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+
 const RentGuaranteeSection = () => {
   const rentFeatures = [{
     icon: <DollarSign className="h-8 w-8 p-1.5 text-mica-green" />,
     title: "Renta garantizada",
-    description: "El propietario recibe su pago puntual todos los meses, sin importar si el inquilino se atrasa o deja de pagar."
+    description: "El propietario recibe su pago todos los meses, sin importar si el inquilino se atrasa o deja de pagar."
   }, {
     icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
     title: "Continuidad financiera",
@@ -20,6 +22,7 @@ const RentGuaranteeSection = () => {
     title: "Tranquilidad total",
     description: "Los propietarios pueden planificar sus finanzas con seguridad, sabiendo que su ingreso por renta está garantizado."
   }];
+
   return <section className="py-16 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-mica-green/5 rounded-full filter blur-3xl"></div>
@@ -83,4 +86,5 @@ const RentGuaranteeSection = () => {
       </div>
     </section>;
 };
+
 export default RentGuaranteeSection;

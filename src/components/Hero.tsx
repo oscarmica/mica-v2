@@ -37,7 +37,7 @@ const Hero = () => {
     text: "Investigaciones en -24hrs"
   }, {
     icon: <Home className="h-5 w-5 text-mica-green" />,
-    text: "Renta sin aval"
+    text: "Renta con o sin aval"
   }, {
     icon: <Calendar className="h-5 w-5 text-mica-green" />,
     text: "Proceso 100% digital"
@@ -60,14 +60,25 @@ const Hero = () => {
   
   return <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto relative">
-        {/* Floating emojis */}
+        {/* Floating emojis with animation */}
         {emojis.map((item, index) => (
           <motion.div 
             key={index}
             className={`absolute ${item.position} ${item.rotation} opacity-30 hidden md:block`}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.3, y: 0 }}
-            transition={{ delay: index * 0.2 }}
+            animate={{ 
+              opacity: 0.3, 
+              y: 0,
+              x: [0, 10, 0, -10, 0],
+              transition: { 
+                opacity: { duration: 0.5, delay: index * 0.2 },
+                x: { 
+                  repeat: Infinity, 
+                  duration: 5 + index, 
+                  ease: "easeInOut"
+                }
+              }
+            }}
             whileHover={{ scale: 1.2, opacity: 0.7 }}
           >
             <span className={`${item.size}`}>{item.emoji}</span>
@@ -84,7 +95,7 @@ const Hero = () => {
             
             {/* Main heading with TextRotate */}
             <motion.h1 variants={itemVariants} className="font-bold mb-6 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Tu renta <span className="text-mica-green">
+              Tu renta <span className="text-mica-green flex justify-center">
                 <TextRotate 
                   texts={["simple", "segura", "digital", "garantizada", "sin aval"]} 
                   rotationInterval={3000}

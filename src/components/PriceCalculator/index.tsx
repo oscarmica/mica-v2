@@ -92,10 +92,6 @@ const PriceCalculator = () => {
                 setHoveredPlan={setHoveredPlan} 
                 formatCurrency={formatCurrency} 
               />
-              
-              <div className="text-xs text-gray-500 mt-3 text-center">
-                *Todos los precios más IVA. Precios mínimos aplicables para rentas menores según plan.
-              </div>
             </div>
           </div>
         </motion.div>

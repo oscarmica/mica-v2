@@ -7,26 +7,50 @@ const BackedBySection = () => {
   const investors = [
     {
       id: "investor-1",
-      description: "500 Startups",
-      image: "/lovable-uploads/123802e5-dd86-46c3-a3f5-e2e4aae42406.png",
+      description: "AVPI México",
+      image: "/lovable-uploads/88b1ab28-57e0-4f66-8c68-ca23d8f24ac5.png",
       className: "h-16 w-auto",
     },
     {
       id: "investor-2",
-      description: "Y Combinator",
-      image: "/lovable-uploads/ebe01cde-4d86-4836-8870-9d6f35b8849e.png",
+      description: "Gaingels",
+      image: "/lovable-uploads/fcb34d14-bae7-4732-bffc-5478fa5f71bd.png",
       className: "h-16 w-auto",
     },
     {
       id: "investor-3",
-      description: "Seedstars",
-      image: "/lovable-uploads/ff9ce11f-edef-49d1-8483-7bcf51c548d0.png",
+      description: "Iluminar",
+      image: "/lovable-uploads/fc6f175b-0cbb-4819-a925-bb0c76b6590e.png",
       className: "h-16 w-auto",
     },
     {
       id: "investor-4",
-      description: "ALLVP",
-      image: "/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png",
+      description: "DVC",
+      image: "/lovable-uploads/96bbe110-b3b5-489d-8e06-63b67a09aed8.png",
+      className: "h-16 w-auto",
+    },
+    {
+      id: "investor-5",
+      description: "Mercury",
+      image: "/lovable-uploads/3294abf7-320a-47bf-80d2-a1c1b1bdbaa3.png",
+      className: "h-16 w-auto",
+    },
+    {
+      id: "investor-6",
+      description: "MoneyGram",
+      image: "/lovable-uploads/6d11866b-d8f6-462e-86ff-17d4ae2266e9.png",
+      className: "h-16 w-auto",
+    },
+    {
+      id: "investor-7",
+      description: "Stellar Community Fund",
+      image: "/lovable-uploads/cffd39a9-e5e0-4260-9731-8f6827f643e7.png",
+      className: "h-16 w-auto",
+    },
+    {
+      id: "investor-8",
+      description: "Techstars",
+      image: "/lovable-uploads/d0017621-d48f-4ed1-acee-784a0c90bfce.png",
       className: "h-16 w-auto",
     },
   ];

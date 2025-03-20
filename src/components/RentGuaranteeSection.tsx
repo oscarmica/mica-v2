@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Clock, Award, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+
 const RentGuaranteeSection = () => {
   const rentFeatures = [{
     icon: <DollarSign className="h-8 w-8 p-1.5 text-mica-green" />,
@@ -20,6 +22,7 @@ const RentGuaranteeSection = () => {
     title: "Tranquilidad total",
     description: "Los propietarios pueden planificar sus finanzas con seguridad, sabiendo que su ingreso por renta está garantizado."
   }];
+
   return <section className="py-16 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-mica-green/5 rounded-full filter blur-3xl"></div>
@@ -37,7 +40,9 @@ const RentGuaranteeSection = () => {
       }} transition={{
         duration: 0.5
       }} className="max-w-4xl mx-auto text-center mb-12">
-          
+          <span className="inline-block px-3 py-1 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium mb-3">
+            Nuestra promesa
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
             <span className="relative z-10">Cobranza garantizada</span>
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">
@@ -81,4 +86,5 @@ const RentGuaranteeSection = () => {
       </div>
     </section>;
 };
+
 export default RentGuaranteeSection;

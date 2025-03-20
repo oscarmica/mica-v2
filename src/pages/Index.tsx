@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import NavHeader from '@/components/ui/nav-header';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PriceCalculator from '@/components/PriceCalculator';
 import HowItWorks from '@/components/HowItWorks';
@@ -66,7 +66,7 @@ const Index = () => {
         transition={{ duration: 0.3 }}
         className="overflow-hidden"
       >
-        <NavHeader />
+        <Navbar />
         
         <main className="relative overflow-hidden">
           {/* Decorative elements */}

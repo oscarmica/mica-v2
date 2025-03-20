@@ -1,16 +1,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import NavHeader from '@/components/ui/nav-header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Scale } from 'lucide-react';
+import { Check, Scale } from 'lucide-react';
 
 const SoporteLegal = () => {
   return (
     <>
-      <NavHeader />
+      <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <motion.div

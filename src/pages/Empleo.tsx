@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import NavHeader from '@/components/ui/nav-header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,7 +30,7 @@ const Empleo = () => {
 
   return (
     <>
-      <NavHeader />
+      <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <motion.div

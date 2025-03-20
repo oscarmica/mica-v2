@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import NavHeader from '@/components/ui/nav-header';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 const SobreNosotros = () => {
   return (
     <>
-      <NavHeader />
+      <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <motion.div

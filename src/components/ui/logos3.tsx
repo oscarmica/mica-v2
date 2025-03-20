@@ -76,8 +76,8 @@ const Logos3 = ({
     },
   ],
 }: Logos3Props) => {
-  // Create AutoScroll plugin
-  const plugin = React.useMemo(() => AutoScroll({ playOnInit: true, speed: 0.5 }), []);
+  // Create AutoScroll plugin with slower speed
+  const plugin = React.useMemo(() => AutoScroll({ playOnInit: true, speed: 0.3 }), []);
 
   return (
     <section className="py-12">
@@ -90,14 +90,21 @@ const Logos3 = ({
       </div>
       <div className="pt-8">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
-          <Carousel opts={{ loop: true, align: "center" }} plugins={[plugin]}>
+          <Carousel 
+            opts={{ 
+              loop: true, 
+              align: "center",
+              dragFree: true,
+            }} 
+            plugins={[plugin]}
+          >
             <CarouselContent className="ml-0">
               {logos.map((logo) => (
                 <CarouselItem
                   key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                  className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/4"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center px-2">
+                  <div className="mx-6 flex shrink-0 items-center justify-center px-4">
                     <div className="flex items-center justify-center h-16">
                       <img
                         src={logo.image}

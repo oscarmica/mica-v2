@@ -27,7 +27,7 @@ const PlanCardGrid: React.FC<PlanCardGridProps> = ({
   
   return (
     <div className="flex flex-col h-full">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 flex-grow">
+      <div className={`grid grid-cols-1 ${protectionPlans.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-2 sm:gap-3 flex-grow`}>
         {protectionPlans.map(plan => (
           <PlanCard 
             key={plan.id} 

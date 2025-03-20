@@ -1,4 +1,3 @@
-
 export interface ProtectionPlan {
   id: string;
   title: string;
@@ -16,7 +15,10 @@ export interface ProtectionPlan {
   color: string;
   bgColor: string;
   iconColor: string;
+  propertyTypes: string[];
 }
+
+export type PropertyType = 'habitacional' | 'comercial';
 
 export const protectionPlans: ProtectionPlan[] = [
   {
@@ -42,7 +44,8 @@ export const protectionPlans: ProtectionPlan[] = [
     },
     color: "bg-blue-50 border-blue-200",
     bgColor: "bg-blue-100", 
-    iconColor: "text-blue-500"
+    iconColor: "text-blue-500",
+    propertyTypes: ['habitacional', 'comercial']
   },
   {
     id: "integral",
@@ -62,12 +65,13 @@ export const protectionPlans: ProtectionPlan[] = [
     },
     minRentLimit: 8000, // Para rentas de $8,000 o menos
     percentage: {
-      monthly: 0.0375, // 3.75% mensual
-      yearly: 0.30 // 30% del monto de renta mensual
+      monthly: 0.0375, // 3.75% mensual para habitacional
+      yearly: 0.30 // 30% del monto de renta mensual para habitacional
     },
     color: "bg-green-50 border-green-200",
     bgColor: "bg-green-100",
-    iconColor: "text-mica-green"
+    iconColor: "text-mica-green",
+    propertyTypes: ['habitacional', 'comercial']
   },
   {
     id: "premium",
@@ -92,6 +96,18 @@ export const protectionPlans: ProtectionPlan[] = [
     },
     color: "bg-amber-50 border-amber-200",
     bgColor: "bg-amber-100",
-    iconColor: "text-amber-500"
+    iconColor: "text-amber-500",
+    propertyTypes: ['habitacional']
   }
 ];
+
+export const getPercentageRates = (plan: ProtectionPlan, propertyType: PropertyType): { monthly: number; yearly: number } => {
+  if (propertyType === 'comercial' && plan.id === 'integral') {
+    return {
+      monthly: 0.0625, // 6.25% like premium
+      yearly: 0.50     // 50% like premium
+    };
+  }
+  
+  return plan.percentage;
+};

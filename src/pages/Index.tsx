@@ -15,6 +15,7 @@ import RentGuaranteeSection from '@/components/RentGuaranteeSection';
 import MediaSection from '@/components/MediaSection';
 import BackedBySection from '@/components/BackedBySection';
 import BlogSection from '@/components/BlogSection';
+import MicaOverviewSection from '@/components/MicaOverviewSection';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -81,6 +82,9 @@ const Index = () => {
           <CombinedMicaFeatures />
           <BackedBySection />
           
+          {/* Nueva sección: Innovación en el sector inmobiliario */}
+          <MicaOverviewSection />
+          
           {/* 3. Cobranza garantizada */}
           <RentGuaranteeSection />
           
@@ -90,18 +94,21 @@ const Index = () => {
           {/* 5. Porque elegir mica y no polizas juridicas */}
           <BenefitsSection />
           
-          {/* 6. Calculadora */}
+          {/* 6. Como funciona */}
+          <HowItWorks />
+          
+          {/* 7. Calculadora */}
           <div id="calculator">
             <PriceCalculator />
           </div>
           
-          {/* 7. Mica en los medios */}
+          {/* 8. Mica en los medios */}
           <MediaSection />
           
-          {/* 8. Lo que dicen nuestros asesores */}
+          {/* 9. Lo que dicen nuestros asesores */}
           <Testimonials />
           
-          {/* 9. Blog */}
+          {/* 10. Blog */}
           <BlogSection />
           
           <CallToAction />

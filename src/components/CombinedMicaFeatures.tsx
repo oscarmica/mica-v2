@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
+import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
 
-// Componente para los diferentes beneficios según el tipo de usuario
 const UserBenefits = ({
   type
 }: {
@@ -88,7 +88,6 @@ const UserBenefits = ({
 };
 
 const CombinedMicaFeatures = () => {
-  // Animation variants
   const containerVariants = {
     hidden: {
       opacity: 0
@@ -117,7 +116,6 @@ const CombinedMicaFeatures = () => {
   };
 
   return <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
       <div className="absolute bottom-40 right-0 w-96 h-96 bg-pink-200/10 rounded-full filter blur-3xl -z-10"></div>
       <div className="absolute top-40 left-10 w-96 h-96 bg-blue-200/10 rounded-full filter blur-3xl -z-10"></div>
@@ -145,7 +143,6 @@ const CombinedMicaFeatures = () => {
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
           </p>
           
-          {/* Aquí colocamos el párrafo de descripción de Mica */}
           <motion.div 
             initial={{
               opacity: 0,
@@ -171,7 +168,6 @@ const CombinedMicaFeatures = () => {
           </motion.div>
         </motion.div>
         
-        {/* Features Section from MicaOverviewSection */}
         <div className="mb-12">
           <motion.h3 initial={{
             opacity: 0,
@@ -243,7 +239,6 @@ const CombinedMicaFeatures = () => {
         once: true,
         margin: "-100px"
       }} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Asesores - ahora primero */}
           <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-blue-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">
@@ -256,7 +251,6 @@ const CombinedMicaFeatures = () => {
             </div>
           </motion.div>
           
-          {/* Propietarios - ahora segundo */}
           <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-green-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">
@@ -269,7 +263,6 @@ const CombinedMicaFeatures = () => {
             </div>
           </motion.div>
           
-          {/* Inquilinos - ahora tercero */}
           <motion.div variants={itemVariants} className="bg-white rounded-2xl shadow-lg border border-gray-50 p-6 hover:shadow-xl transition-shadow relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-40 h-40 bg-amber-50 rounded-full -translate-x-10 -translate-y-20 group-hover:scale-110 transition-transform duration-500 ease-out"></div>
             <div className="relative z-10">

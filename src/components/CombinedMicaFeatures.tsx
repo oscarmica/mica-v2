@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -6,7 +5,6 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
-
 const UserBenefits = ({
   type
 }: {
@@ -87,7 +85,6 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
-
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -100,7 +97,6 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
-
   const itemVariants = {
     hidden: {
       y: 20,
@@ -115,13 +111,12 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
-
   return <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
       <div className="absolute bottom-40 right-0 w-96 h-96 bg-pink-200/10 rounded-full filter blur-3xl -z-10"></div>
       <div className="absolute top-40 left-10 w-96 h-96 bg-blue-200/10 rounded-full filter blur-3xl -z-10"></div>
       
-      <div className="container px-4 mx-auto max-w-7xl relative z-10">
+      <div className="container px-4 mx-auto max-w-7xl relative z-10 py-0 my-0">
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -140,60 +135,54 @@ const CombinedMicaFeatures = () => {
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
             </svg>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-12">
+          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-12 my-[39px]">
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
           </p>
         </motion.div>
         
         <div className="mb-12">
           <motion.h3 initial={{
+          opacity: 0,
+          y: 10
+        }} whileInView={{
+          opacity: 1,
+          y: 0
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.4
+        }} className="text-xl font-semibold mb-8 text-center py-0">
+            A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente
+          </motion.h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[{
+            icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
+            title: "Investigación en 24 horas",
+            description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
+          }, {
+            icon: <FileCheck className="h-8 w-8 p-1.5 text-mica-green" />,
+            title: "Firma digital de contratos",
+            description: "Proceso 100% digital para firmar contratos desde cualquier lugar, sin necesidad de reuniones presenciales."
+          }, {
+            icon: <Percent className="h-8 w-8 p-1.5 text-mica-green" />,
+            title: "Gestión mensual de renta",
+            description: "Nos encargamos del cobro mensual para que los propietarios reciban su pago puntualmente."
+          }, {
+            icon: <ShieldCheck className="h-8 w-8 p-1.5 text-mica-green" />,
+            title: "Desalojos express",
+            description: "En caso necesario, gestionamos el proceso de desalojo de manera eficiente, protegiendo el patrimonio."
+          }].map((feature, index) => <motion.div key={index} initial={{
             opacity: 0,
-            y: 10
+            y: 20
           }} whileInView={{
             opacity: 1,
             y: 0
           }} viewport={{
             once: true
           }} transition={{
-            duration: 0.4
-          }} className="text-xl font-semibold mb-8 text-center">
-            A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente
-          </motion.h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
-                title: "Investigación en 24 horas",
-                description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
-              }, 
-              {
-                icon: <FileCheck className="h-8 w-8 p-1.5 text-mica-green" />,
-                title: "Firma digital de contratos",
-                description: "Proceso 100% digital para firmar contratos desde cualquier lugar, sin necesidad de reuniones presenciales."
-              }, 
-              {
-                icon: <Percent className="h-8 w-8 p-1.5 text-mica-green" />,
-                title: "Gestión mensual de renta",
-                description: "Nos encargamos del cobro mensual para que los propietarios reciban su pago puntualmente."
-              }, 
-              {
-                icon: <ShieldCheck className="h-8 w-8 p-1.5 text-mica-green" />,
-                title: "Desalojos express",
-                description: "En caso necesario, gestionamos el proceso de desalojo de manera eficiente, protegiendo el patrimonio."
-              }
-            ].map((feature, index) => (
-              <motion.div key={index} initial={{
-                opacity: 0,
-                y: 20
-              }} whileInView={{
-                opacity: 1,
-                y: 0
-              }} viewport={{
-                once: true
-              }} transition={{
-                delay: index * 0.1
-              }}>
+            delay: index * 0.1
+          }}>
                 <Card className="h-full hover:shadow-md transition-all border-gray-100">
                   <CardContent className="p-6">
                     <div className="flex gap-4 items-start">
@@ -207,29 +196,22 @@ const CombinedMicaFeatures = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
+              </motion.div>)}
           </div>
         </div>
         
         {/* Description paragraph - moved after features section */}
-        <motion.div 
-          initial={{
-            opacity: 0,
-            y: 20
-          }} 
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }} 
-          viewport={{
-            once: true
-          }} 
-          transition={{
-            duration: 0.5
-          }} 
-          className="text-center max-w-4xl mx-auto mb-12 px-4"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.5
+      }} className="text-center max-w-4xl mx-auto mb-12 px-4">
           <p className="text-gray-600 text-lg leading-relaxed">
             Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
             diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
@@ -238,24 +220,18 @@ const CombinedMicaFeatures = () => {
         </motion.div>
         
         {/* Improved bottom message - simplified and redesigned */}
-        <motion.div 
-          initial={{
-            opacity: 0,
-            y: 20
-          }} 
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }} 
-          viewport={{
-            once: true
-          }} 
-          transition={{
-            duration: 0.6,
-            delay: 0.2
-          }} 
-          className="text-center mb-16 py-10 px-8 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-2xl max-w-4xl mx-auto shadow-sm"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6,
+        delay: 0.2
+      }} className="text-center mb-16 py-10 px-8 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-2xl max-w-4xl mx-auto shadow-sm">
           <p className="text-xl font-medium">
             Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de 
             <span className="block mt-2">
@@ -309,5 +285,4 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
-
 export default CombinedMicaFeatures;

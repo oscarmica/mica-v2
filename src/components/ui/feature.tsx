@@ -1,25 +1,27 @@
-
 import { User, Shield, FileSignature, CreditCard, Clock, Search, MousePointerClick, CreditCard as CreditCardIcon, Building, Star, HeartHandshake, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-
 function Feature() {
   // Animation variants
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0
+    },
     visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.2,
         delayChildren: 0.3
       }
     }
   };
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
@@ -27,21 +29,15 @@ function Feature() {
       }
     }
   };
-
-  return (
-    <div className="w-full py-20 lg:py-28 bg-gradient-to-b from-white to-slate-50 text-gray-800 relative overflow-hidden">
+  return <div className="w-full py-20 bg-gradient-to-b from-white to-slate-50 text-gray-800 relative overflow-hidden lg:py-[30px]">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-mica-green/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-64 h-64 bg-mica-pink-baby/10 rounded-full filter blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="flex flex-col gap-10"
-        >
+        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
+        once: true
+      }} className="flex flex-col gap-10">
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center mb-4">
             <Badge className="bg-mica-green text-white mb-4 px-4 py-1.5">Comparativa</Badge>
             <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl mx-auto font-bold text-gray-800">
@@ -54,10 +50,7 @@ function Feature() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left side - Testimonial showcase */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex items-center justify-center bg-gradient-to-br from-mica-green/10 to-mica-blue-baby/10 rounded-2xl p-8 relative overflow-hidden border border-gray-100 shadow-sm"
-            >
+            <motion.div variants={itemVariants} className="flex items-center justify-center bg-gradient-to-br from-mica-green/10 to-mica-blue-baby/10 rounded-2xl p-8 relative overflow-hidden border border-gray-100 shadow-sm">
               <div className="absolute bottom-10 left-10 bg-white p-6 rounded-xl max-w-xs text-gray-800 shadow-lg border border-gray-100">
                 <div className="text-2xl mb-1 font-serif text-mica-green">"</div>
                 <p className="text-xl font-medium mb-4">
@@ -71,9 +64,7 @@ function Feature() {
                     <p className="font-semibold">Rodolfo Navarro</p>
                     <p className="text-sm text-gray-500">Asesor Inmobiliario en H Cinco</p>
                     <div className="flex">
-                      {"★★★★★".split("").map((star, i) => (
-                        <span key={i} className="text-yellow-400">{star}</span>
-                      ))}
+                      {"★★★★★".split("").map((star, i) => <span key={i} className="text-yellow-400">{star}</span>)}
                     </div>
                   </div>
                 </div>
@@ -81,14 +72,8 @@ function Feature() {
             </motion.div>
 
             {/* Right side - Steps */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex flex-col space-y-6"
-            >
-              <motion.div 
-                variants={itemVariants}
-                className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100"
-              >
+            <motion.div variants={itemVariants} className="flex flex-col space-y-6">
+              <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100">
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
                     <Zap className="w-8 h-8 stroke-1 text-mica-green" />
@@ -102,10 +87,7 @@ function Feature() {
                 </div>
               </motion.div>
 
-              <motion.div 
-                variants={itemVariants}
-                className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100"
-              >
+              <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100">
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
                     <Clock className="w-8 h-8 stroke-1 text-mica-green" />
@@ -119,10 +101,7 @@ function Feature() {
                 </div>
               </motion.div>
 
-              <motion.div 
-                variants={itemVariants}
-                className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100"
-              >
+              <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100">
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
                     <Shield className="w-8 h-8 stroke-1 text-mica-green" />
@@ -136,10 +115,7 @@ function Feature() {
                 </div>
               </motion.div>
 
-              <motion.div 
-                variants={itemVariants}
-                className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100"
-              >
+              <motion.div variants={itemVariants} className="bg-white rounded-xl p-6 transition-all hover:shadow-md border border-gray-100">
                 <div className="flex items-start">
                   <div className="mr-4 p-3 bg-mica-green/10 rounded-lg">
                     <HeartHandshake className="w-8 h-8 stroke-1 text-mica-green" />
@@ -156,8 +132,6 @@ function Feature() {
           </div>
         </motion.div>
       </div>
-    </div>
-  );
+    </div>;
 }
-
 export { Feature };

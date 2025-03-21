@@ -92,13 +92,13 @@ const Index = () => {
           {/* 5. Porque elegir mica y no polizas juridicas */}
           <BenefitsSection />
           
-          {/* 6. Como funciona */}
-          <HowItWorks />
-          
-          {/* 7. Calculadora */}
+          {/* 6. Calculadora - moved above How It Works */}
           <div id="calculator">
             <PriceCalculator />
           </div>
+          
+          {/* 7. Como funciona - now after calculator */}
+          <HowItWorks />
           
           {/* 8. Mica en los medios */}
           <MediaSection />

@@ -5,7 +5,6 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
-
 const UserBenefits = ({
   type
 }: {
@@ -89,7 +88,6 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
-
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -284,5 +282,4 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
-
 export default CombinedMicaFeatures;

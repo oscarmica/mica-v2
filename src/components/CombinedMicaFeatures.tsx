@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
+
 const UserBenefits = ({
   type
 }: {
@@ -85,6 +86,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -200,7 +202,6 @@ const CombinedMicaFeatures = () => {
           </div>
         </div>
         
-        {/* Description paragraph - moved after features section */}
         <motion.div initial={{
         opacity: 0,
         y: 20
@@ -219,25 +220,19 @@ const CombinedMicaFeatures = () => {
           </p>
         </motion.div>
         
-        {/* Improved bottom message - simplified and redesigned */}
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6,
-        delay: 0.2
-      }} className="text-center mb-16 py-10 px-8 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-2xl max-w-4xl mx-auto shadow-sm">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center mb-16 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-xl max-w-4xl mx-auto py-8 px-6 shadow-sm"
+        >
           <p className="text-xl font-medium">
             Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de 
             <span className="block mt-2">
-              <span className="text-mica-green font-semibold">renta más segura</span>, 
-              <span className="text-mica-green font-semibold ml-1">ágil</span> y 
-              <span className="text-mica-green font-semibold ml-1">conveniente</span>.
+              <span className="text-mica-green font-semibold mx-1">renta más segura</span>
+              <span className="text-mica-green font-semibold mx-1">ágil</span> y 
+              <span className="text-mica-green font-semibold mx-1">conveniente</span>.
             </span>
           </p>
         </motion.div>
@@ -285,4 +280,5 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
+
 export default CombinedMicaFeatures;

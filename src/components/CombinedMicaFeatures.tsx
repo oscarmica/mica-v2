@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
@@ -131,7 +132,7 @@ const CombinedMicaFeatures = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="text-center max-w-3xl mx-auto mb-8">
+      }} className="text-center max-w-3xl mx-auto">
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative inline-block">
             <span className="relative z-10">¿Qué es <span className="text-mica-green">mica</span>?</span>
@@ -139,11 +140,12 @@ const CombinedMicaFeatures = () => {
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
             </svg>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mt-4">
+          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-8">
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
           </p>
         </motion.div>
         
+        {/* Description paragraph - centered and with more spacing as per the image */}
         <motion.div 
           initial={{
             opacity: 0,
@@ -159,9 +161,9 @@ const CombinedMicaFeatures = () => {
           transition={{
             duration: 0.5
           }} 
-          className="p-6 text-center max-w-3xl mx-auto mb-12"
+          className="text-center max-w-4xl mx-auto mb-16"
         >
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-lg px-4">
             Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
             diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
             de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.

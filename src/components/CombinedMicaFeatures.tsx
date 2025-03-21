@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
+import MicaOverviewSection from '@/components/MicaOverviewSection';
 
 // Componente para los diferentes beneficios según el tipo de usuario
 const UserBenefits = ({
@@ -85,6 +86,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   // Animation variants
   const containerVariants = {
@@ -98,6 +100,7 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
+
   const itemVariants = {
     hidden: {
       y: 20,
@@ -112,6 +115,7 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
+
   return <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
@@ -129,7 +133,7 @@ const CombinedMicaFeatures = () => {
         once: true
       }} transition={{
         duration: 0.6
-      }} className="text-center max-w-3xl mx-auto mb-16">
+      }} className="text-center max-w-3xl mx-auto mb-8">
           
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative inline-block">
             <span className="relative z-10">¿Qué es <span className="text-mica-green">mica</span>?</span>
@@ -141,6 +145,11 @@ const CombinedMicaFeatures = () => {
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
           </p>
         </motion.div>
+        
+        {/* Insert the MicaOverviewSection right here, between the title and the three tables */}
+        <div className="mb-12">
+          <MicaOverviewSection />
+        </div>
         
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,
@@ -205,4 +214,5 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
+
 export default CombinedMicaFeatures;

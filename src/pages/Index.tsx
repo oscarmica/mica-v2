@@ -15,7 +15,6 @@ import RentGuaranteeSection from '@/components/RentGuaranteeSection';
 import MediaSection from '@/components/MediaSection';
 import BackedBySection from '@/components/BackedBySection';
 import BlogSection from '@/components/BlogSection';
-import MicaOverviewSection from '@/components/MicaOverviewSection';
 
 const Index = () => {
   // Add smooth scrolling for anchor links
@@ -80,9 +79,6 @@ const Index = () => {
           
           {/* 2. Que es mica? */}
           <CombinedMicaFeatures />
-          
-          {/* Nueva sección: Innovación en el sector inmobiliario */}
-          <MicaOverviewSection />
           
           {/* Quien nos respalda */}
           <BackedBySection />

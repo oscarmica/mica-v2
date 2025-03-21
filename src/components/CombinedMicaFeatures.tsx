@@ -5,7 +5,6 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
-
 const UserBenefits = ({
   type
 }: {
@@ -86,7 +85,6 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
-
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -213,20 +211,22 @@ const CombinedMicaFeatures = () => {
       }} transition={{
         duration: 0.5
       }} className="text-center max-w-4xl mx-auto mb-12 px-4">
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
-            diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
-            de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
-          </p>
+          <p className="text-gray-600 text-lg leading-relaxed">Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios, 
+incluso si el inquilino no paga.</p>
         </motion.div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center mb-16 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-xl max-w-4xl mx-auto py-8 px-6 shadow-sm"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} whileInView={{
+        opacity: 1,
+        y: 0
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6,
+        delay: 0.2
+      }} className="text-center mb-16 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-xl max-w-4xl mx-auto py-8 px-6 shadow-sm">
           <p className="text-xl font-medium">
             Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de 
             <span className="block mt-2">
@@ -280,5 +280,4 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
-
 export default CombinedMicaFeatures;

@@ -25,30 +25,6 @@ const MicaOverviewSection = () => {
 
   return (
     <div>
-      <motion.div 
-        initial={{
-          opacity: 0,
-          y: 20
-        }} 
-        whileInView={{
-          opacity: 1,
-          y: 0
-        }} 
-        viewport={{
-          once: true
-        }} 
-        transition={{
-          duration: 0.5
-        }} 
-        className="p-6"
-      >
-        <p className="text-gray-600">
-          Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
-          diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
-          de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
-        </p>
-      </motion.div>
-
       {/* Features Section */}
       <div className="mb-12">
         <motion.h3 initial={{

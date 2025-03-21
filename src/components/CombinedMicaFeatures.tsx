@@ -142,30 +142,30 @@ const CombinedMicaFeatures = () => {
           <p className="text-lg md:text-xl text-gray-600 mt-4">
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
           </p>
-          
-          <motion.div 
-            initial={{
-              opacity: 0,
-              y: 20
-            }} 
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }} 
-            viewport={{
-              once: true
-            }} 
-            transition={{
-              duration: 0.5
-            }} 
-            className="p-6 text-center"
-          >
-            <p className="text-gray-600">
-              Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
-              diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
-              de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
-            </p>
-          </motion.div>
+        </motion.div>
+        
+        <motion.div 
+          initial={{
+            opacity: 0,
+            y: 20
+          }} 
+          whileInView={{
+            opacity: 1,
+            y: 0
+          }} 
+          viewport={{
+            once: true
+          }} 
+          transition={{
+            duration: 0.5
+          }} 
+          className="p-6 text-center max-w-3xl mx-auto mb-12"
+        >
+          <p className="text-gray-600">
+            Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
+            diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
+            de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
+          </p>
         </motion.div>
         
         <div className="mb-12">

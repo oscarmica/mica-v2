@@ -8,7 +8,7 @@ const RentGuaranteeSection = () => {
   const rentFeatures = [{
     icon: <DollarSign className="h-8 w-8 p-1.5 text-mica-green" />,
     title: "Renta garantizada",
-    description: "El propietario recibe su pago todos los meses, sin importar si el inquilino se atrasa o deja de pagar."
+    description: "El propietario recibe su pago, sin importar si el inquilino se atrasa o deja de pagar."
   }, {
     icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
     title: "Continuidad financiera",
@@ -50,7 +50,7 @@ const RentGuaranteeSection = () => {
             </svg>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            <span className="font-semibold text-gray-800">No más rentas caidas. No más incertidumbre financiera.</span> Con mica, los propietarios reciben su renta todos los meses, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
+            <span className="font-semibold text-gray-800">No más rentas caidas. No más incertidumbre financiera.</span> Con mica, los propietarios reciben su renta, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
           </p>
         </motion.div>
         

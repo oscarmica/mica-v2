@@ -1,6 +1,7 @@
 import { User, Shield, FileSignature, CreditCard, Clock, Search, MousePointerClick, CreditCard as CreditCardIcon, Building, Star, HeartHandshake, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+
 function Feature() {
   // Animation variants
   const containerVariants = {
@@ -29,7 +30,7 @@ function Feature() {
       }
     }
   };
-  return <div className="w-full py-20 bg-gradient-to-b from-white to-slate-50 text-gray-800 relative overflow-hidden lg:py-[30px]">
+  return <div id="why-mica" className="w-full py-20 bg-gradient-to-b from-white to-slate-50 text-gray-800 relative overflow-hidden lg:py-[30px]">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-mica-green/5 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-64 h-64 bg-mica-pink-baby/10 rounded-full filter blur-3xl"></div>
@@ -134,4 +135,5 @@ function Feature() {
       </div>
     </div>;
 }
+
 export { Feature };

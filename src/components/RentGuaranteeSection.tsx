@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Clock, Award, Shield } from 'lucide-react';
@@ -7,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const RentGuaranteeSection = () => {
   const rentFeatures = [{
     icon: <DollarSign className="h-8 w-8 p-1.5 text-mica-green" />,
-    title: "Renta garantizada",
+    title: "Renta protegida",
     description: "El propietario recibe su pago, sin importar si el inquilino se atrasa o deja de pagar."
   }, {
     icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,

@@ -78,12 +78,14 @@ const Index = () => {
           {/* 1. Hero */}
           <Hero />
           
-          {/* 2. Que es mica? + Quien nos respalda */}
+          {/* 2. Que es mica? */}
           <CombinedMicaFeatures />
-          <BackedBySection />
           
           {/* Nueva sección: Innovación en el sector inmobiliario */}
           <MicaOverviewSection />
+          
+          {/* Quien nos respalda */}
+          <BackedBySection />
           
           {/* 3. Cobranza garantizada */}
           <RentGuaranteeSection />

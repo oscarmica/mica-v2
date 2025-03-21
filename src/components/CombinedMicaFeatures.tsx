@@ -140,33 +140,8 @@ const CombinedMicaFeatures = () => {
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
             </svg>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-8">
+          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-12">
             Creamos la <span className="font-semibold">mejor protección de renta</span> en México
-          </p>
-        </motion.div>
-        
-        {/* Description paragraph - centered and with more spacing as per the image */}
-        <motion.div 
-          initial={{
-            opacity: 0,
-            y: 20
-          }} 
-          whileInView={{
-            opacity: 1,
-            y: 0
-          }} 
-          viewport={{
-            once: true
-          }} 
-          transition={{
-            duration: 0.5
-          }} 
-          className="text-center max-w-4xl mx-auto mb-16"
-        >
-          <p className="text-gray-600 text-lg px-4">
-            Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
-            diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
-            de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
           </p>
         </motion.div>
         
@@ -237,6 +212,60 @@ const CombinedMicaFeatures = () => {
           </div>
         </div>
         
+        {/* Description paragraph - moved after features section */}
+        <motion.div 
+          initial={{
+            opacity: 0,
+            y: 20
+          }} 
+          whileInView={{
+            opacity: 1,
+            y: 0
+          }} 
+          viewport={{
+            once: true
+          }} 
+          transition={{
+            duration: 0.5
+          }} 
+          className="text-center max-w-4xl mx-auto mb-12 px-4"
+        >
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas 
+            diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos 
+            de protección que aseguran ingresos constantes para los propietarios, incluso si el inquilino no paga.
+          </p>
+        </motion.div>
+        
+        {/* Improved bottom message - simplified and redesigned */}
+        <motion.div 
+          initial={{
+            opacity: 0,
+            y: 20
+          }} 
+          whileInView={{
+            opacity: 1,
+            y: 0
+          }} 
+          viewport={{
+            once: true
+          }} 
+          transition={{
+            duration: 0.6,
+            delay: 0.2
+          }} 
+          className="text-center mb-16 py-10 px-8 bg-gradient-to-r from-mica-green/10 to-blue-100/20 rounded-2xl max-w-4xl mx-auto shadow-sm"
+        >
+          <p className="text-xl font-medium">
+            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de 
+            <span className="block mt-2">
+              <span className="text-mica-green font-semibold">renta más segura</span>, 
+              <span className="text-mica-green font-semibold ml-1">ágil</span> y 
+              <span className="text-mica-green font-semibold ml-1">conveniente</span>.
+            </span>
+          </p>
+        </motion.div>
+        
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,
         margin: "-100px"
@@ -276,23 +305,6 @@ const CombinedMicaFeatures = () => {
               <UserBenefits type="inquilinos" />
             </div>
           </motion.div>
-        </motion.div>
-        
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6,
-        delay: 0.4
-      }} className="text-center mt-16 bg-gradient-to-r from-mica-green/20 to-blue-100/30 p-6 rounded-2xl max-w-3xl mx-auto shadow-sm">
-          <p className="text-xl font-medium">
-            Alineamos los intereses de propietario, inquilino y asesor para lograr una experiencia de <strong className="text-mica-green">renta más segura, ágil y conveniente</strong>.
-          </p>
         </motion.div>
       </div>
     </section>;

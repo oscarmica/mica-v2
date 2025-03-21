@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+
 const steps = [{
   icon: <UserSearch className="h-8 w-8 text-white" />,
   emoji: "🔍",
@@ -31,6 +32,7 @@ const steps = [{
   description: 'Gestionamos el cobro puntual de la renta cada mes, asegurando que recibas tu pago a tiempo.',
   details: ['Cobros automáticos en fechas programadas', 'Notificaciones de pago para inquilinos', 'Transferencias seguras a tu cuenta bancaria', 'Seguimiento de pagos y reportes mensuales']
 }];
+
 const HowItWorks = () => {
   const containerVariants = {
     hidden: {
@@ -84,7 +86,6 @@ const HowItWorks = () => {
           </p>
         </motion.div>
         
-        {/* Desktop View */}
         <div className="hidden md:block">
           <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
           once: true,
@@ -135,7 +136,6 @@ const HowItWorks = () => {
           </motion.div>
         </div>
         
-        {/* Mobile View - Carousel */}
         <div className="md:hidden">
           <Carousel className="w-full">
             <CarouselContent>
@@ -198,11 +198,15 @@ const HowItWorks = () => {
         duration: 0.5,
         delay: 0.3
       }} className="flex justify-center mt-16">
-          <Button className="bg-mica-green hover:bg-mica-green/90 text-white">
+          <Button 
+            className="bg-mica-green hover:bg-mica-green/90 text-white"
+            onClick={() => window.location.href = "https://catatumbo.mica.rent/welcome"}
+          >
             Regístrate y comienza ahora
           </Button>
         </motion.div>
       </div>
     </section>;
 };
+
 export default HowItWorks;

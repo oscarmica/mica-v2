@@ -121,7 +121,10 @@ const Hero = () => {
             
             {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group">
+              <Button 
+                className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group"
+                onClick={() => window.location.href = "https://catatumbo.mica.rent/welcome"}
+              >
                 Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

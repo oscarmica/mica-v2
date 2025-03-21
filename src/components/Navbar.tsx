@@ -34,7 +34,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Inicio", href: "#" },
     { name: "Qué es mica", href: "#features" },
-    { name: "Por qué mica", href: "#why-mica" }, // Updated href to match the Feature component's section
+    { name: "Por qué mica", href: "#why-mica" },
     { name: "Calculadora de precio", href: "#calculator" },
     { name: "Cómo Funciona", href: "#how-it-works" },
   ];
@@ -64,7 +64,10 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90 group">
+          <Button 
+            className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90 group"
+            onClick={() => window.location.href = "https://catatumbo.mica.rent/welcome"}
+          >
             Inicia sesión
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
@@ -103,7 +106,10 @@ const Navbar = () => {
               ))}
               <Button 
                 className="bg-mica-green text-white rounded-lg w-full hover:bg-mica-green/90 group" 
-                onClick={closeMenu}
+                onClick={() => {
+                  closeMenu();
+                  window.location.href = "https://catatumbo.mica.rent/welcome";
+                }}
               >
                 Inicia sesión
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

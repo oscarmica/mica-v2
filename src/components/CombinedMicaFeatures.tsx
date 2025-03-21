@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2, Wallet } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
+
 const UserBenefits = ({
   type
 }: {
@@ -35,6 +36,9 @@ const UserBenefits = ({
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Seguro contra daños'
+    }, {
+      icon: <Wallet className="h-6 w-6 text-mica-green" />,
+      text: 'Recibe el pago de tu renta incluso cuando el inquilino se atrasa o deja de pagar'
     }],
     inquilinos: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
@@ -85,6 +89,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -279,4 +284,5 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
+
 export default CombinedMicaFeatures;

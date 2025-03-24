@@ -61,7 +61,7 @@ const UserBenefits = ({
     }],
     asesores: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Cierra operaciones más rápido'
+      text: 'Cierra más operaciones, más rápido'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'

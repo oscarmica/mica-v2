@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
+
 const UserBenefits = ({
   type
 }: {
@@ -88,6 +89,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -161,7 +163,7 @@ const CombinedMicaFeatures = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{
             icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
-            title: "Investigación en 24 horas",
+            title: "Investigación express",
             description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
           }, {
             icon: <FileCheck className="h-8 w-8 p-1.5 text-mica-green" />,
@@ -282,4 +284,5 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
+
 export default CombinedMicaFeatures;

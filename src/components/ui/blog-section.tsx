@@ -1,7 +1,9 @@
 
 import { MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
+// Este componente ya no se usa ya que la funcionalidad se ha trasladado directamente a BlogSection.tsx
 const Blog = () => (
   <div className="w-full py-20 lg:py-40 bg-gradient-to-b from-white to-slate-50">
     <div className="container mx-auto flex flex-col gap-14">
@@ -9,9 +11,11 @@ const Blog = () => (
         <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-bold text-gray-800">
           Artículos recientes
         </h4>
-        <Button className="gap-4 bg-mica-green hover:bg-mica-green/90 text-white">
-          Ver todos los artículos <MoveRight className="w-4 h-4" />
-        </Button>
+        <Link to="/blog">
+          <Button className="gap-4 bg-mica-green hover:bg-mica-green/90 text-white">
+            Ver todos los artículos <MoveRight className="w-4 h-4" />
+          </Button>
+        </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="flex flex-col gap-2 hover:opacity-75 cursor-pointer group transition-all">

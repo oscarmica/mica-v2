@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Logos3 } from '@/components/ui/logos3';
@@ -61,7 +62,7 @@ const BackedBySection = () => {
           </span>
           <h2 className="text-3xl font-bold mb-4">Quiénes nos respaldan</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Contamos con el apoyo de fondos de inversión y aceleradoras líderes en el sector tecnológico
+            Contamos con el apoyo de fondos de inversión & instituciones líderes en el sector
           </p>
         </motion.div>
         

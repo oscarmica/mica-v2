@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Clock, Award, Shield } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
 const RentGuaranteeSection = () => {
   const rentFeatures = [{
     icon: <DollarSign className="h-8 w-8 p-1.5 text-mica-green" />,
@@ -21,7 +20,6 @@ const RentGuaranteeSection = () => {
     title: "Tranquilidad total",
     description: "Los propietarios pueden planificar sus finanzas con seguridad, sabiendo que su ingreso por renta está garantizado."
   }];
-
   return <section className="py-16 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-mica-green/5 rounded-full filter blur-3xl"></div>
@@ -49,7 +47,7 @@ const RentGuaranteeSection = () => {
             </svg>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            <span className="font-semibold text-gray-800">No más rentas caidas. No más incertidumbre financiera.</span> Con mica, los propietarios reciben su renta, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
+            <span className="font-semibold text-gray-800">incluso si el inquilino se atrasa o deja de pagar.</span> Con mica, los propietarios reciben su renta, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
           </p>
         </motion.div>
         
@@ -85,5 +83,4 @@ const RentGuaranteeSection = () => {
       </div>
     </section>;
 };
-
 export default RentGuaranteeSection;

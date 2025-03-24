@@ -214,7 +214,7 @@ const CombinedMicaFeatures = () => {
       }} transition={{
         duration: 0.5
       }} className="text-center max-w-4xl mx-auto mb-12 px-4">
-          <p className="text-gray-600 text-lg leading-relaxed">Mica es una empresa innovadora en el sector inmobiliario mexicano que ofrece soluciones tecnológicas diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios,  incluso si el inquilino se atrasa o deja de pagar.</p>
+          <p className="text-gray-600 text-lg leading-relaxed">Mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios,  incluso si el inquilino se atrasa o deja de pagar.</p>
         </motion.div>
         
         <motion.div initial={{

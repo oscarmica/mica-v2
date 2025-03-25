@@ -154,9 +154,7 @@ const CombinedMicaFeatures = () => {
           once: true
         }} transition={{
           duration: 0.4
-        }} className="text-xl font-semibold mb-8 text-center py-0">
-            A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente
-          </motion.h3>
+        }} className="text-xl font-semibold mb-8 text-center py-0">A diferencia de las pólizas tradicionales, mica ofrece una experiencia digital rápida y eficiente</motion.h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{

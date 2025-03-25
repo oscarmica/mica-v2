@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
+
 const UserBenefits = ({
   type
 }: {
@@ -60,7 +61,7 @@ const UserBenefits = ({
     }],
     asesores: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Cierra más operaciones, más rápido'
+      text: 'Cierra operaciones más rápido'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
@@ -88,6 +89,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -114,6 +116,7 @@ const CombinedMicaFeatures = () => {
       }
     }
   };
+  
   return <section id="features" className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
       <div className="absolute bottom-40 right-0 w-96 h-96 bg-pink-200/10 rounded-full filter blur-3xl -z-10"></div>
@@ -138,28 +141,22 @@ const CombinedMicaFeatures = () => {
               <path d="M0,0 C50,5 80,5 200,0 L200,8 L0,8 Z" fill="currentColor"></path>
             </svg>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 mb-12 my-[39px]">
-            Creamos la <span className="font-semibold">mejor protección de renta</span> en México
-          </p>
+          
+          <div className="space-y-4">
+            <p className="text-lg md:text-xl text-gray-600">
+              Creamos la <span className="font-semibold">mejor protección de renta</span> en México
+            </p>
+            <p className="text-lg md:text-xl text-gray-600">
+              A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente
+            </p>
+          </div>
         </motion.div>
         
-        <div className="mb-12">
-          <motion.h3 initial={{
-          opacity: 0,
-          y: 10
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.4
-        }} className="text-xl font-semibold mb-8 text-center py-0">A diferencia de las pólizas tradicionales, mica ofrece una experiencia digital rápida y eficiente</motion.h3>
-          
+        <div className="mb-12 mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{
             icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
-            title: "Investigación express",
+            title: "Investigación en 24 horas",
             description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
           }, {
             icon: <FileCheck className="h-8 w-8 p-1.5 text-mica-green" />,
@@ -212,7 +209,7 @@ const CombinedMicaFeatures = () => {
       }} transition={{
         duration: 0.5
       }} className="text-center max-w-4xl mx-auto mb-12 px-4">
-          <p className="text-gray-600 text-lg leading-relaxed">mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios,  incluso si el inquilino se atrasa o deja de pagar.</p>
+          <p className="text-gray-600 text-lg leading-relaxed">Mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios, <span className="font-bold">incluso si el inquilino se atrasa o deja de pagar.</span></p>
         </motion.div>
         
         <motion.div initial={{
@@ -236,6 +233,58 @@ const CombinedMicaFeatures = () => {
             </span>
           </p>
         </motion.div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8 mb-12"
+        >
+          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">Nuestra experiencia respalda la confianza</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[{ 
+              icon: <FileCheck className="h-8 w-8 text-mica-green" />,
+              number: "+15,000",
+              label: "rentas protegidas"
+            },
+            { 
+              icon: <Users className="h-8 w-8 text-mica-green" />,
+              number: "+500",
+              label: "agentes inmobiliarios"
+            },
+            { 
+              icon: <Building className="h-8 w-8 text-mica-green" />,
+              number: "+700",
+              label: "propiedades administradas"
+            }].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  {item.icon}
+                </div>
+                <h4 className="text-3xl font-bold text-gray-800 mb-1">{item.number}</h4>
+                <p className="text-gray-600">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        <motion.h3 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl font-bold mb-8 text-center"
+        >
+          Soluciones personalizadas para cada participante
+        </motion.h3>
         
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{
         once: true,

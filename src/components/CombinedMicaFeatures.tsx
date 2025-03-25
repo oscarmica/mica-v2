@@ -5,7 +5,6 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
-
 const UserBenefits = ({
   type
 }: {
@@ -89,7 +88,6 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
-
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -216,7 +214,7 @@ const CombinedMicaFeatures = () => {
       }} transition={{
         duration: 0.5
       }} className="text-center max-w-4xl mx-auto mb-12 px-4">
-          <p className="text-gray-600 text-lg leading-relaxed">Mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios,  incluso si el inquilino se atrasa o deja de pagar.</p>
+          <p className="text-gray-600 text-lg leading-relaxed">mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios,  incluso si el inquilino se atrasa o deja de pagar.</p>
         </motion.div>
         
         <motion.div initial={{
@@ -284,5 +282,4 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
-
 export default CombinedMicaFeatures;

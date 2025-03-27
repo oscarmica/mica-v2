@@ -102,6 +102,16 @@ const Footer = () => {
                 <h3 className="font-semibold mb-6 text-lg">Enlaces</h3>
                 <ul className="space-y-3">
                   <li>
+                    <a href="https://mica.rent/blog/" className="text-mica-gray-2 hover:text-mica-green transition-colors" target="_blank" rel="noopener noreferrer">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://qqaukttgp97.typeform.com/embajador?typeform-source=mica.rent" className="text-mica-gray-2 hover:text-mica-green transition-colors" target="_blank" rel="noopener noreferrer">
+                      Embajador mica
+                    </a>
+                  </li>
+                  <li>
                     <Link to="/faq" className="text-mica-gray-2 hover:text-mica-green transition-colors">
                       FAQ
                     </Link>

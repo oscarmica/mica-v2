@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 const MicaOverviewSection = () => {
   const micaFeatures = [{
     icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
-    title: "Investigación en 24 horas",
+    title: "Investigación Express",
     description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
   }, {
     icon: <FileSignature className="h-8 w-8 p-1.5 text-mica-green" />,

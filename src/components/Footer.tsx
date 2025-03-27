@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -43,12 +43,46 @@ const Footer = () => {
           {/* Brand Section */}
           <motion.div variants={itemVariants} className="col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4 group">
-              <span className="font-bold text-xl group-hover:text-mica-green transition-colors">mica</span>
-              <span className="font-bold text-xl text-mica-green">.rent</span>
+              <img 
+                src="/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png" 
+                alt="Mica Logo" 
+                className="h-7"
+              />
             </Link>
             <p className="text-mica-gray-2">
               Brindando tranquilidad a los inquilinos en todo México con nuestros servicios integrales de protección.
             </p>
+            
+            {/* Social Media Links */}
+            <div className="flex space-x-4 mt-6">
+              <a 
+                href="https://www.instagram.com/mica.rent/?igshid=YzAyZWRlMzg%3D" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-mica-gray-2 hover:text-mica-green transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/89596792/admin/dashboard/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-mica-gray-2 hover:text-mica-green transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.facebook.com/mica.rent/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-mica-gray-2 hover:text-mica-green transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+            </div>
           </motion.div>
           
           {/* Links & Contact Section */}
@@ -87,7 +121,12 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="tel:+525519059169" className="text-mica-gray-2 hover:text-mica-green transition-colors flex items-center">
+                    <a 
+                      href="https://api.whatsapp.com/send/?phone=%2B525519059169&text&type=phone_number&app_absent=0" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-mica-gray-2 hover:text-mica-green transition-colors flex items-center"
+                    >
                       <Phone className="h-4 w-4 mr-2 text-mica-green" />
                       <span>+52 55 1905 9169</span>
                     </a>

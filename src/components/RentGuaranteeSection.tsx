@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Clock, Award, Shield } from 'lucide-react';
@@ -18,7 +19,7 @@ const RentGuaranteeSection = () => {
   }, {
     icon: <Award className="h-8 w-8 p-1.5 text-mica-green" />,
     title: "Tranquilidad total",
-    description: "Los propietarios pueden planificar sus finanzas con seguridad, sabiendo que su ingreso por renta está garantizado."
+    description: "Los propietarios pueden planificar sus finanzas con seguridad, sabiendo que su ingreso por renta está protegido."
   }];
   return <section className="py-16 bg-white relative overflow-hidden">
       {/* Background decorative elements */}

@@ -1,63 +1,49 @@
 
 import React from 'react';
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { motion } from "framer-motion";
+import { cn } from '@/lib/utils';
 
-interface ToggleOption {
+interface PaymentToggleOption {
   value: string;
   label: string;
 }
 
 interface PaymentToggleProps {
   label?: string;
-  description?: string;
-  options: ToggleOption[];
+  options: PaymentToggleOption[];
   selectedValue: string;
   onValueChange: (value: string) => void;
   className?: string;
 }
 
-const PaymentToggle: React.FC<PaymentToggleProps> = ({ 
+const PaymentToggle: React.FC<PaymentToggleProps> = ({
   label,
-  description,
   options,
   selectedValue,
   onValueChange,
-  className = ""
+  className
 }) => {
   return (
-    <motion.div 
-      className={`flex justify-center mb-4 ${className}`}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: 0.1 }}
-    >
-      {(label || description) && (
-        <div className="text-center mb-2">
-          {label && <div className="text-sm font-medium text-gray-800">{label}</div>}
-          {description && <div className="text-xs text-gray-500">{description}</div>}
-        </div>
+    <div className={cn("w-full", className)}>
+      {label && (
+        <p className="text-sm text-gray-600 mb-2 font-medium">{label}</p>
       )}
-      
-      <div className="bg-slate-100 p-1 rounded-full w-full max-w-xs">
-        <ToggleGroup type="single" value={selectedValue} className="border-none w-full">
-          {options.map((option) => (
-            <ToggleGroupItem 
-              key={option.value}
-              value={option.value} 
-              className={`rounded-full py-1.5 text-xs font-medium flex-1 ${
-                selectedValue === option.value 
-                  ? 'bg-white text-mica-green shadow-sm' 
-                  : 'text-slate-500 hover:text-slate-800'
-              }`}
-              onClick={() => onValueChange(option.value)}
-            >
-              {option.label}
-            </ToggleGroupItem>
-          ))}
-        </ToggleGroup>
+      <div className="bg-slate-100 p-1 rounded-lg flex w-full">
+        {options.map((option) => (
+          <button
+            key={option.value}
+            className={cn(
+              "flex-1 py-2 px-3 text-sm font-medium transition-all rounded-md text-center",
+              selectedValue === option.value
+                ? "bg-white text-gray-900 shadow-sm"
+                : "text-gray-500 hover:text-gray-700"
+            )}
+            onClick={() => onValueChange(option.value)}
+          >
+            {option.label}
+          </button>
+        ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

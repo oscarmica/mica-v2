@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -12,25 +13,25 @@ const steps = [{
   emoji: "🔍",
   title: 'Investigación de inquilinos',
   description: 'Realizamos un análisis completo del perfil de tus inquilinos para garantizar que cumplan con los requisitos necesarios.',
-  details: ['Verificación de identidad y antecedentes', 'Historial crediticio y capacidad de pago', 'Referencias de arrendamientos anteriores', 'Estabilidad laboral y fuentes de ingreso']
+  details: ['Verificación de identidad y antecedentes', 'Historial crediticio y capacidad de pago', 'Estabilidad laboral y fuentes de ingreso']
 }, {
   icon: <Shield className="h-8 w-8 text-white" />,
   emoji: "🛡️",
   title: 'Elegir tipo de protección',
   description: 'Selecciona el plan de protección que mejor se adapte a tus necesidades de arrendamiento.',
-  details: ['Protección básica para tranquilidad esencial', 'Protección plus con coberturas adicionales', 'Protección total para máxima seguridad', 'Planes personalizados para propiedades especiales']
+  details: ['Protección Jurídica para tranquilidad esencial', 'Protección Integral con coberturas adicionales', 'Protección Premium para máxima seguridad', 'Planes personalizados para propiedades especiales']
 }, {
   icon: <FileSignature className="h-8 w-8 text-white" />,
   emoji: "📝",
   title: 'Firma de contratos',
   description: 'Facilitamos el proceso de firma digital de contratos entre propietarios e inquilinos de forma segura y legal.',
-  details: ['Contratos personalizados según tus necesidades', 'Firma electrónica con validez legal', 'Almacenamiento seguro de documentos', 'Asesoría legal durante todo el proceso']
+  details: ['Generación de contratos que blindan el arrendamiento', 'Firma electrónica con validez legal', 'Almacenamiento seguro de documentos', 'Asesoría legal durante todo el proceso']
 }, {
   icon: <CreditCard className="h-8 w-8 text-white" />,
   emoji: "💳",
   title: 'Cobro mensual de renta',
   description: 'Gestionamos el cobro puntual de la renta cada mes, asegurando que recibas tu pago a tiempo.',
-  details: ['Cobros automáticos en fechas programadas', 'Notificaciones de pago para inquilinos', 'Transferencias seguras a tu cuenta bancaria', 'Seguimiento de pagos y reportes mensuales']
+  details: ['Notificaciones de pago para inquilinos', 'Transferencias seguras a tu cuenta bancaria', 'Seguimiento de pagos y reportes mensuales']
 }];
 
 const HowItWorks = () => {

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2, Wallet } from 'lucide-react';
@@ -60,16 +61,13 @@ const UserBenefits = ({
     }],
     asesores: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Cierra operaciones más rápido'
+      text: 'Cierra más operaciones, más rápido'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Investigación y contrato en 24hrs'
-    }, {
-      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Extraordinarias comisiones'
+      text: 'Investigación Express'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Servicio seguro y ágil'
@@ -141,10 +139,10 @@ const CombinedMicaFeatures = () => {
           
           <div className="space-y-4">
             <p className="text-lg md:text-xl text-gray-600">
-              Creamos la <span className="font-semibold">mejor protección de renta</span> en México
+              <span className="font-semibold">Creamos la mejor protección de renta en México</span>
             </p>
             <p className="text-lg md:text-xl text-gray-600">
-              A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente
+              <span className="font-semibold">A diferencia de las pólizas tradicionales, Mica ofrece una experiencia digital rápida y eficiente</span>
             </p>
           </div>
         </motion.div>
@@ -153,7 +151,7 @@ const CombinedMicaFeatures = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[{
             icon: <Clock className="h-8 w-8 p-1.5 text-mica-green" />,
-            title: "Investigación en 24 horas",
+            title: "Investigación Express",
             description: "Evaluamos prospectos de inquilinos rápidamente para que puedas cerrar operaciones sin demoras."
           }, {
             icon: <FileCheck className="h-8 w-8 p-1.5 text-mica-green" />,
@@ -208,8 +206,6 @@ const CombinedMicaFeatures = () => {
       }} className="text-center max-w-4xl mx-auto mb-12 px-4">
           <p className="text-gray-600 text-lg leading-relaxed">Mica ofrece soluciones innovadoras a los asesores inmobiliarios, diseñadas para proteger a propietarios e inquilinos durante el proceso de renta. Ofrecemos productos de protección que aseguran ingresos constantes para los propietarios, <span className="font-bold">incluso si el inquilino se atrasa o deja de pagar.</span></p>
         </motion.div>
-        
-        
         
         <motion.div initial={{
         opacity: 0,
@@ -267,7 +263,7 @@ const CombinedMicaFeatures = () => {
       }} transition={{
         duration: 0.5
       }} className="text-2xl font-bold mb-8 text-center">
-          Soluciones personalizadas para cada participante
+          Soluciones para todos los involucrados
         </motion.h3>
         
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{

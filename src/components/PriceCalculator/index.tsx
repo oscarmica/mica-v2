@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import RentInput from './RentInput';
@@ -7,6 +8,7 @@ import BenefitsSection from './BenefitsSection';
 import { protectionPlans, PropertyType, getPercentageRates } from './types';
 import { formatCurrency } from './PriceCalculatorUtils';
 import { Briefcase, Home } from 'lucide-react';
+
 const PriceCalculator = () => {
   const [rentAmount, setRentAmount] = useState<number>(10000);
   const [isMonthly, setIsMonthly] = useState<boolean>(true);
@@ -44,6 +46,7 @@ const PriceCalculator = () => {
     });
     setPrices(calculatedPrices);
   }, [rentAmount, isMonthly, propertyType]);
+
   return <section id="calculator" className="py-10 md:py-14 bg-gradient-to-b from-white to-slate-50 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-mica-green/5 -z-10 transform -skew-y-3"></div>
@@ -99,26 +102,37 @@ const PriceCalculator = () => {
             <div className="lg:col-span-4">
               <RentInput rentAmount={rentAmount} setRentAmount={setRentAmount} />
               
-              {/* Property Type Toggle */}
-              <PaymentToggle label="Tipo de propiedad" options={[{
-              value: 'habitacional',
-              label: 'Habitacional'
-            }, {
-              value: 'comercial',
-              label: 'Comercial'
-            }]} selectedValue={propertyType} onValueChange={value => setPropertyType(value as PropertyType)} className="mb-3" />
-              
-              {/* Payment Frequency Toggle */}
-              <PaymentToggle label="Frecuencia de pago" options={[{
-              value: 'monthly',
-              label: 'Mensual'
-            }, {
-              value: 'yearly',
-              label: 'Anual'
-            }]} selectedValue={isMonthly ? 'monthly' : 'yearly'} onValueChange={value => setIsMonthly(value === 'monthly')} />
-              
-              {/* Advisor Commission Note */}
-              
+              <div className="grid grid-cols-1 gap-3">
+                {/* Property Type Toggle */}
+                <PaymentToggle 
+                  label="Tipo de propiedad" 
+                  options={[{
+                    value: 'habitacional',
+                    label: 'Habitacional'
+                  }, {
+                    value: 'comercial',
+                    label: 'Comercial'
+                  }]} 
+                  selectedValue={propertyType} 
+                  onValueChange={value => setPropertyType(value as PropertyType)} 
+                  className="mb-3 w-full" 
+                />
+                
+                {/* Payment Frequency Toggle */}
+                <PaymentToggle 
+                  label="Frecuencia de pago" 
+                  options={[{
+                    value: 'monthly',
+                    label: 'Mensual'
+                  }, {
+                    value: 'yearly',
+                    label: 'Anual'
+                  }]} 
+                  selectedValue={isMonthly ? 'monthly' : 'yearly'} 
+                  onValueChange={value => setIsMonthly(value === 'monthly')} 
+                  className="w-full"
+                />
+              </div>
             </div>
             
             <div className="lg:col-span-8">
@@ -129,4 +143,5 @@ const PriceCalculator = () => {
       </div>
     </section>;
 };
+
 export default PriceCalculator;

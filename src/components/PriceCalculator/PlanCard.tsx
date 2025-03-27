@@ -1,124 +1,95 @@
 
-import React, { useState } from 'react';
-import { Check, ShieldCheck, ChevronDown, ChevronUp, Calendar } from "lucide-react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { Check } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Button } from "@/components/ui/button";
 import { ProtectionPlan } from './types';
 
 interface PlanCardProps {
   plan: ProtectionPlan;
   price: number;
   isMonthly: boolean;
-  hoveredPlan: string | null;
-  setHoveredPlan: (planId: string | null) => void;
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
   formatCurrency: (amount: number) => string;
-  compact?: boolean;
 }
 
 const PlanCard: React.FC<PlanCardProps> = ({
   plan,
   price,
   isMonthly,
-  hoveredPlan,
-  setHoveredPlan,
-  formatCurrency,
-  compact = false
+  isHovered,
+  onHover,
+  onLeave,
+  formatCurrency
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  const isRecommended = plan.recommended;
   
-  const toggleExpanded = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent triggering hover effect
-    setExpanded(prev => !prev);
-  };
-  
-  // Determine how many features to show initially
-  const visibleFeatures = expanded ? plan.features : plan.features.slice(0, 3);
-  const hasMoreFeatures = plan.features.length > 3;
-
-  // Get payment guarantee months
-  const protectionDetails = plan.id === "juridica" ? "Jurídica" : plan.id === "integral" ? "Pagamos hasta 4 meses de impago" : "Pagamos hasta 12 meses de impago";
-
   return (
     <motion.div 
-      className={cn(
-        "border flex flex-col h-full transition-all duration-300 rounded-xl",
-        compact ? "p-3 sm:p-4" : "p-6 sm:p-8",
-        plan.color,
-        hoveredPlan === plan.id ? "shadow-lg transform -translate-y-1" : "shadow",
-        plan.id === "integral" ? "md:scale-[1.02] z-10" : ""
-      )}
-      onMouseEnter={() => setHoveredPlan(plan.id)}
-      onMouseLeave={() => setHoveredPlan(null)}
-      whileHover={{ scale: 1.01 }}
-      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: plan.order * 0.1 }}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      className={`
+        relative overflow-hidden rounded-xl border transition-all
+        ${isRecommended ? 'border-mica-green' : 'border-slate-200'}
+        ${isHovered ? 'shadow-lg scale-[1.02] z-10' : 'shadow-sm bg-white'}
+      `}
     >
-      <div className="flex items-center mb-2">
-        <div className={cn("mr-2 p-1.5 rounded-lg", plan.bgColor)}>
-          <ShieldCheck className={cn("h-4 w-4", plan.iconColor)} />
+      {/* Recommended Badge */}
+      {isRecommended && (
+        <div className="absolute top-0 right-0">
+          <div className="bg-mica-green text-white text-xs font-medium px-3 py-1 rounded-bl-lg">
+            Recomendado
+          </div>
         </div>
-        <h3 className="font-bold text-base">{plan.title}</h3>
-      </div>
+      )}
       
-      {/* Protection guarantee badge */}
-      <div className={cn("flex items-center mb-2 text-xs font-medium px-2 py-1 rounded-md w-fit", 
-        plan.id === "juridica" 
-          ? "bg-blue-100 text-blue-700" 
-          : plan.id === "integral" 
-            ? "bg-green-100 text-green-700" 
-            : "bg-amber-100 text-amber-700"
-      )}>
-        <Calendar className="h-3 w-3 mr-1 inline-block" />
-        <span>{protectionDetails}</span>
-      </div>
-      
-      <div className="mb-3">
-        <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-end">
-          {formatCurrency(price)}
-          <span className="text-xs text-gray-500 ml-1 mb-1">
-            {isMonthly ? '/mes' : '/año'}
-          </span>
+      <div className="p-5">
+        {/* Plan Header */}
+        <div className="mb-5">
+          <h3 
+            className={`text-xl font-bold mb-2 ${isRecommended ? 'text-mica-green' : 'text-gray-900'}`}
+          >
+            {plan.name}
+          </h3>
+          <p className="text-sm text-gray-500 h-12">{plan.description}</p>
         </div>
-      </div>
-      
-      <div className="border-t border-gray-200 pt-2 mt-auto">
-        <ul className="space-y-1.5">
-          {visibleFeatures.map((feature, index) => (
-            <li key={index} className="flex items-start text-xs sm:text-sm">
-              <Check className={cn("mr-1 h-3.5 w-3.5 flex-shrink-0 mt-0.5", plan.iconColor)} />
-              <span className="text-balance">{feature}</span>
+        
+        {/* Price Section */}
+        <div className="mb-5 min-h-[85px] flex flex-col justify-center">
+          <div className="flex items-baseline">
+            <span className="text-3xl font-bold text-gray-900">{formatCurrency(price)}</span>
+            <span className="ml-1 text-gray-500 text-sm">
+              {isMonthly ? '/mes' : '/año'}
+            </span>
+          </div>
+          <p className="text-xs text-gray-500 mt-1">
+            {plan.priceDescription}
+          </p>
+        </div>
+        
+        {/* Features List */}
+        <ul className="mb-6 space-y-2">
+          {plan.features.map((feature, i) => (
+            <li key={i} className="flex items-start">
+              <Check className={`h-5 w-5 mr-2 shrink-0 ${isRecommended ? 'text-mica-green' : 'text-gray-400'}`} />
+              <span className="text-sm text-gray-600">{feature}</span>
             </li>
           ))}
         </ul>
         
-        {compact && hasMoreFeatures && (
-          <button 
-            onClick={toggleExpanded}
-            className={cn(
-              "w-full mt-1.5 flex items-center justify-center text-xs font-medium gap-1 py-1 rounded-md transition-colors",
-              plan.iconColor,
-              "hover:bg-gray-100/70"
-            )}
-          >
-            {expanded ? (
-              <>
-                <ChevronUp className="h-3 w-3" />
-                <span>Mostrar menos</span>
-              </>
-            ) : (
-              <>
-                <span>+ {plan.features.length - 3} beneficios más</span>
-                <ChevronDown className="h-3 w-3" />
-              </>
-            )}
-          </button>
-        )}
+        {/* Action Button */}
+        <Button 
+          className={`w-full ${isRecommended ? 'bg-mica-green hover:bg-mica-green/90' : 'bg-slate-800 hover:bg-slate-700'} text-white`}
+          onClick={() => window.open('https://catatumbo.mica.rent/welcome', '_blank')}
+        >
+          Elegir plan
+        </Button>
       </div>
-
-      {plan.id === "integral" && (
-        <div className="absolute -top-2 right-2 bg-mica-green text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-          Recomendado
-        </div>
-      )}
     </motion.div>
   );
 };

@@ -48,7 +48,6 @@ const Hero = () => {
     text: "Asistencia legal"
   }];
 
-  // Emoji decorations for floating elements
   const emojis = [{
     emoji: "🏠",
     position: "top-[15%] left-[5%]",
@@ -77,7 +76,6 @@ const Hero = () => {
   }];
   return <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container px-4 mx-auto relative">
-        {/* Floating emojis with animation - now visible on mobile too */}
         {emojis.map((item, index) => <motion.div key={index} className={`absolute ${item.position} ${item.rotation} opacity-30`} initial={{
         opacity: 0,
         y: 20
@@ -105,22 +103,16 @@ const Hero = () => {
         
         <div className="max-w-5xl mx-auto">
           <motion.div className="text-center relative z-10" variants={containerVariants} initial="hidden" animate="visible">
-            {/* Emoji Badge */}
-            
-            
-            {/* Main heading with TextRotate */}
             <motion.h1 variants={itemVariants} className="font-bold mb-6 text-balance text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Tu renta <span className="text-mica-green flex justify-center">
                 <TextRotate texts={["simple", "segura", "digital", "puntual", "protegida", "con o sin aval"]} rotationInterval={3000} staggerDuration={0.05} staggerFrom="first" mainClassName="text-mica-green" />
               </span>
             </motion.h1>
             
-            {/* Description */}
             <motion.p variants={itemVariants} className="text-mica-gray-2 text-lg sm:text-xl max-w-2xl mx-auto mb-8 text-balance">
               Tecnología, expertise legal y soluciones financieras para tus operaciones de renta.
             </motion.p>
             
-            {/* Feature list */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-8">
               {features.map((feature, index) => <div key={index} className="flex items-center bg-white px-4 py-2 rounded-full shadow-sm">
                   {feature.icon}
@@ -128,13 +120,18 @@ const Hero = () => {
                 </div>)}
             </motion.div>
             
-            {/* CTA Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="bg-mica-green text-white rounded-lg px-8 py-6 text-base h-auto group" onClick={() => window.location.href = "https://catatumbo.mica.rent/welcome"}>
                 Regístrate
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto">Agendar Demo</Button>
+              <Button 
+                variant="outline" 
+                className="border-2 border-mica-gray-5 bg-white text-mica-gray-1 hover:bg-slate-50 rounded-lg px-8 py-6 text-base h-auto"
+                onClick={() => window.open("https://calendly.com/lorena-mica/30min", "_blank")}
+              >
+                Agendar Demo
+              </Button>
             </motion.div>
           </motion.div>
         </div>

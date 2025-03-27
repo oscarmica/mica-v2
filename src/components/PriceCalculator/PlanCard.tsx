@@ -24,13 +24,14 @@ const PlanCard: React.FC<PlanCardProps> = ({
   onLeave,
   formatCurrency
 }) => {
-  const isRecommended = plan.recommended;
+  // We'll use the plan's id to determine if it's recommended - in this case, let's assume 'integral' is recommended
+  const isRecommended = plan.id === 'integral';
   
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: plan.order * 0.1 }}
+      transition={{ duration: 0.3, delay: 0.1 * (plan.id === 'juridica' ? 0 : plan.id === 'integral' ? 1 : 2) }}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       className={`
@@ -54,12 +55,12 @@ const PlanCard: React.FC<PlanCardProps> = ({
           <h3 
             className={`text-xl font-bold mb-2 ${isRecommended ? 'text-mica-green' : 'text-gray-900'}`}
           >
-            {plan.name}
+            {plan.title}
           </h3>
           <p className="text-sm text-gray-500 h-12">{plan.description}</p>
         </div>
         
-        {/* Price Section */}
+        {/* Price Section - Making sure all price sections have the same height */}
         <div className="mb-5 min-h-[85px] flex flex-col justify-center">
           <div className="flex items-baseline">
             <span className="text-3xl font-bold text-gray-900">{formatCurrency(price)}</span>
@@ -68,7 +69,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
             </span>
           </div>
           <p className="text-xs text-gray-500 mt-1">
-            {plan.priceDescription}
+            {`Para rentas ${isMonthly ? 'mensuales' : 'anuales'} ${plan.minRentLimit ? `de hasta ${formatCurrency(plan.minRentLimit)}` : ''}`}
           </p>
         </div>
         

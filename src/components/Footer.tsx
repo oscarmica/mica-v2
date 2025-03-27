@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Instagram, Linkedin, Facebook, Whatsapp } from 'lucide-react';
+import { Mail, MapPin, Instagram, Linkedin, Facebook, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -82,6 +81,15 @@ const Footer = () => {
               >
                 <Facebook className="h-5 w-5" />
               </a>
+              <a 
+                href="https://api.whatsapp.com/send/?phone=%2B525519059169&text&type=phone_number&app_absent=0" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mica-gray-2 hover:text-mica-green transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-5 w-5" /> {/* Replace Whatsapp with MessageCircle */}
+              </a>
             </div>
           </motion.div>
           
@@ -127,7 +135,7 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       className="text-mica-gray-2 hover:text-mica-green transition-colors flex items-center"
                     >
-                      <Whatsapp className="h-4 w-4 mr-2 text-mica-green" />
+                      <MessageCircle className="h-4 w-4 mr-2 text-mica-green" />
                       <span>+52 55 1905 9169</span>
                     </a>
                   </li>

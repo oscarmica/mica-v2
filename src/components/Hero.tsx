@@ -4,6 +4,7 @@ import { ArrowRight, ShieldCheck, Home, Calendar, Clock, UserCheck } from "lucid
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { TextRotate } from "@/components/ui/text-rotate";
+
 const Hero = () => {
   const containerVariants = {
     hidden: {
@@ -31,8 +32,8 @@ const Hero = () => {
     }
   };
   const features = [{
-    icon: <Calendar className="h-5 w-5 text-mica-green" />,
-    text: "Investigaciones en -24hrs"
+    icon: <Home className="h-5 w-5 text-mica-green" />,
+    text: "Investigaciones express"
   }, {
     icon: <Home className="h-5 w-5 text-mica-green" />,
     text: "Renta con o sin aval"

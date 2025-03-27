@@ -8,22 +8,22 @@ const MediaSection = () => {
   const mediaAppearances = [{
     logo: "/lovable-uploads/5305845e-e795-43a4-8f09-446a45ebae87.png",
     name: "El Financiero",
-    description: ""... el historial o score crediticio juega un rol importante en la vida financiera del individuo ya que es visto como medida e indicador de la estabilidad financiera".",
+    description: "... el historial o score crediticio juega un rol importante en la vida financiera del individuo ya que es visto como medida e indicador de la estabilidad financiera.",
     link: "https://www.elfinanciero.com.mx/economia/2022/10/17/como-mejorar-tu-historial-crediticio-esta-startup-ofrece-una-nueva-opcion/"
   }, {
     logo: "/lovable-uploads/403c6512-f03e-4c44-8b84-3ea4fcfba30e.png", 
     name: "Whitepaper",
-    description: ""Mica is a web platform and app that simplifies renting by equipping tenants and landlords with legal and financial tools to pay bills and underwrite risk."",
+    description: "Mica is a web platform and app that simplifies renting by equipping tenants and landlords with legal and financial tools to pay bills and underwrite risk.",
     link: "https://whitepaper.io/document/2038/mica-deck"
   }, {
     logo: "/lovable-uploads/89f287b9-acf0-407f-9fe4-d60b503e0f60.png",
     name: "El Economista",
-    description: ""Como proptech, queremos crear seguridad para empoderar a los clientes para que renten el departamento que desean y sean inquilinos deseables"",
+    description: "Como proptech, queremos crear seguridad para empoderar a los clientes para que renten el departamento que desean y sean inquilinos deseables",
     link: "https://www.eleconomista.com.mx/tecnologia/Mica-capta-inversion-para-expandir-su-plataforma-de-proteccion-para-propietarios-20220105-0041.html"
   }, {
     logo: "/lovable-uploads/170aeb53-3f25-40bc-abea-8a5699e8344b.png",
     name: "Inmobiliare",
-    description: ""... has intentado varias veces aplicar para un crédito pero el banco te sigue rechazando? Ahora puedes utilizar el pago de tu renta para mejorar tu puntuación crediticia..."",
+    description: "... has intentado varias veces aplicar para un crédito pero el banco te sigue rechazando? Ahora puedes utilizar el pago de tu renta para mejorar tu puntuación crediticia...",
     link: "https://inmobiliare.com/mica-inicia-operaciones-en-mexico-para-democratizar-el-acceso-a-la-vivienda/"
   }];
 

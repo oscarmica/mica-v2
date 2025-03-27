@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,12 +32,15 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // Check if we're on the homepage to use anchor links, otherwise use regular links
+  const isHomePage = window.location.pathname === "/";
+
   const navLinks = [
-    { name: "Inicio", href: "#" },
-    { name: "Qué es mica", href: "#features" },
-    { name: "Por qué mica", href: "#why-mica" },
-    { name: "Calculadora de precio", href: "#calculator" },
-    { name: "Cómo Funciona", href: "#how-it-works" },
+    { name: "Inicio", href: isHomePage ? "#" : "/" },
+    { name: "Qué es mica", href: isHomePage ? "#features" : "/#features" },
+    { name: "Por qué mica", href: isHomePage ? "#why-mica" : "/#why-mica" },
+    { name: "Calculadora de precio", href: isHomePage ? "#calculator" : "/#calculator" },
+    { name: "Cómo Funciona", href: isHomePage ? "#how-it-works" : "/#how-it-works" },
   ];
 
   return (
@@ -45,24 +49,34 @@ const Navbar = () => {
       isScrolled ? "py-3 bg-white/95 shadow-sm backdrop-blur-sm" : "py-5 bg-transparent"
     )}>
       <div className="container px-4 mx-auto flex justify-between items-center">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/c6e28439-6481-459e-ae34-c31b32ed151e.png" 
             alt="Mica Logo" 
             className="h-7"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link, index) => (
-            <a 
-              key={index} 
-              href={link.href} 
-              className="text-sm font-medium text-mica-gray-1 hover:text-mica-green transition-colors"
-            >
-              {link.name}
-            </a>
+            isHomePage || link.href.startsWith('#') ? (
+              <a 
+                key={index} 
+                href={link.href} 
+                className="text-sm font-medium text-mica-gray-1 hover:text-mica-green transition-colors"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link 
+                key={index} 
+                to={link.href} 
+                className="text-sm font-medium text-mica-gray-1 hover:text-mica-green transition-colors"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <Button 
             className="bg-mica-green text-white rounded-lg px-6 h-10 hover:bg-mica-green/90 group"
@@ -95,14 +109,25 @@ const Navbar = () => {
           >
             <div className="container px-4 py-4 flex flex-col space-y-4">
               {navLinks.map((link, index) => (
-                <a 
-                  key={index} 
-                  href={link.href} 
-                  className="py-2 text-mica-gray-1 hover:text-mica-green transition-colors"
-                  onClick={closeMenu}
-                >
-                  {link.name}
-                </a>
+                isHomePage || link.href.startsWith('#') ? (
+                  <a 
+                    key={index} 
+                    href={link.href} 
+                    className="py-2 text-mica-gray-1 hover:text-mica-green transition-colors"
+                    onClick={closeMenu}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="py-2 text-mica-gray-1 hover:text-mica-green transition-colors"
+                    onClick={closeMenu}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <Button 
                 className="bg-mica-green text-white rounded-lg w-full hover:bg-mica-green/90 group" 

@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const MediaSection = () => {
   const mediaAppearances = [{
-    logo: "/lovable-uploads/2a573697-0d4a-4094-8a87-3e25189e4075.png", // Updated El Financiero logo
+    logo: "/lovable-uploads/2a573697-0d4a-4094-8a87-3e25189e4075.png", // El Financiero logo
     name: "El Financiero",
     description: "... el historial o score crediticio juega un rol importante en la vida financiera del individuo ya que es visto como medida e indicador de la estabilidad financiera."
   }, {
@@ -17,7 +17,7 @@ const MediaSection = () => {
     name: "El Economista",
     description: "Como proptech, queremos crear seguridad para empoderar a los clientes para que renten el departamento que desean y sean inquilinos deseables"
   }, {
-    logo: "/lovable-uploads/170aeb53-3f25-40bc-abea-8a5699e8344b.png",
+    logo: "/lovable-uploads/39161894-5c08-4535-864d-24794dcf5362.png", // Updated Inmobiliare logo
     name: "Inmobiliare",
     description: "... has intentado varias veces aplicar para un crédito pero el banco te sigue rechazando? Ahora puedes utilizar el pago de tu renta para mejorar tu puntuación crediticia..."
   }];

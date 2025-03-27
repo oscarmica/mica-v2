@@ -65,12 +65,12 @@ const PriceCalculator = () => {
       }} transition={{
         duration: 0.6
       }} className="text-center mb-4 md:mb-6">
-          {/* Badge first (moved above the heading) */}
-          <span className="inline-block px-3 py-1 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium mb-3">
+          {/* Chip positioned above the heading */}
+          <span className="inline-block px-3 py-1 mb-3 bg-mica-green/10 text-mica-green rounded-full text-xs font-medium">
             Calculadora de protección
           </span>
           
-          {/* Heading second */}
+          {/* Heading */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 relative inline-block">
             <span className="relative z-10">Elige entre 3 productos de protección</span>
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-mica-green/20 z-0" viewBox="0 0 200 8" preserveAspectRatio="none">

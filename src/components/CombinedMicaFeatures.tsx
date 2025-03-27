@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Clock, FileCheck, UserCheck, BadgeCheck, Percent, Users, Home, Building, Shield, HeartHandshake, Sparkles, CheckCircle2, Wallet } from 'lucide-react';
@@ -6,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import MicaOverviewSection from '@/components/MicaOverviewSection';
+
 const UserBenefits = ({
   type
 }: {
@@ -43,9 +43,6 @@ const UserBenefits = ({
     inquilinos: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Renta con o sin aval'
-    }, {
-      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Resultado de investigación max. 24hrs'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Proceso 100% digital y sencillo'
@@ -86,6 +83,7 @@ const UserBenefits = ({
         </li>}
     </ul>;
 };
+
 const CombinedMicaFeatures = () => {
   const containerVariants = {
     hidden: {
@@ -309,4 +307,5 @@ const CombinedMicaFeatures = () => {
       </div>
     </section>;
 };
+
 export default CombinedMicaFeatures;

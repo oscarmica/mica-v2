@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, Instagram, Linkedin, Facebook, MessageCircle } from 'lucide-react';
@@ -143,7 +144,7 @@ const Footer = () => {
                     <MapPin className="h-4 w-4 mr-2 mt-1 text-mica-green shrink-0" />
                     <span className="text-mica-gray-2">
                       MCTC Plataforma de Rentas Sapi de CV<br />
-                      Ciudad de México, CDMX
+                      Amsterdam 255, Hipódromo, Ciudad de México, México
                     </span>
                   </li>
                 </ul>

@@ -41,9 +41,6 @@ const UserBenefits = ({
       text: 'Renta con o sin aval'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Resultado de investigación max. 24hrs'
-    }, {
-      icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Proceso 100% digital y sencillo'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
@@ -57,13 +54,13 @@ const UserBenefits = ({
     }],
     asesores: [{
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Cierra operaciones más rápido'
+      text: 'Cierra más operaciones, más rápido'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Ofrece seguridad y protección a tus clientes propietarios e inquilinos'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
-      text: 'Investigación y contrato en 24hrs'
+      text: 'Investigación Express'
     }, {
       icon: <ShieldCheck className="h-6 w-6 text-mica-green" />,
       text: 'Extraordinarias comisiones'

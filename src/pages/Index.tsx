@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PriceCalculator from '@/components/PriceCalculator';
 import HowItWorks from '@/components/HowItWorks';
-import Testimonials from '@/components/Testimonials';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import CombinedMicaFeatures from '@/components/CombinedMicaFeatures';
@@ -103,8 +102,8 @@ const Index = () => {
           {/* 8. Mica en los medios */}
           <MediaSection />
           
-          {/* 9. Lo que dicen nuestros asesores */}
-          <Testimonials />
+          {/* 9. Lo que dicen nuestros asesores - Temporarily hidden */}
+          {/* <Testimonials /> */}
           
           {/* 10. Blog */}
           <BlogSection />

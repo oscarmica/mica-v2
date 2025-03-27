@@ -9,7 +9,7 @@ const comparisonData = [{
   traditional: "Procesos tradicionales y lentos",
   icon: <Sparkles className="h-10 w-10 p-2" />
 }, {
-  mica: "Verificación en 24 horas",
+  mica: "Investigación express",
   traditional: "Esperas de semanas para verificaciones",
   icon: <Clock className="h-10 w-10 p-2" />
 }, {
@@ -17,7 +17,7 @@ const comparisonData = [{
   traditional: "Coberturas limitadas y restrictivas",
   icon: <Shield className="h-10 w-10 p-2" />
 }, {
-  mica: "Soporte continuo durante todo el contrato",
+  mica: "Soporte continuo incluso después de firmar el contrato",
   traditional: "Servicio mínimo post-firma",
   icon: <BarChart3 className="h-10 w-10 p-2" />
 }];

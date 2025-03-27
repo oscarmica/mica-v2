@@ -48,7 +48,7 @@ const RentGuaranteeSection = () => {
             </svg>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            <span className="font-semibold text-gray-800">incluso si el inquilino se atrasa o deja de pagar.</span> Con mica, los propietarios reciben su renta, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
+            Con mica, los propietarios reciben su renta, <span className="underline decoration-mica-green/30 decoration-2">incluso si el inquilino se atrasa o deja de pagar.</span>
           </p>
         </motion.div>
         

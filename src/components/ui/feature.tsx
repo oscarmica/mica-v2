@@ -1,5 +1,5 @@
+
 import { User, Shield, FileSignature, CreditCard, Clock, Search, MousePointerClick, CreditCard as CreditCardIcon, Building, Star, HeartHandshake, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 function Feature() {
@@ -40,7 +40,7 @@ function Feature() {
         once: true
       }} className="flex flex-col gap-10">
           <motion.div variants={itemVariants} className="flex flex-col items-center text-center mb-4">
-            <Badge className="bg-mica-green text-white mb-4 px-4 py-1.5">Comparativa</Badge>
+            {/* Removed the Badge component that was here */}
             <h2 className="text-3xl md:text-5xl tracking-tighter max-w-2xl mx-auto font-bold text-gray-800">
               ¿Por qué elegir mica?
             </h2>
